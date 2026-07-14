@@ -720,6 +720,27 @@ box-shadow:
 .replay-btn:active{
 transform:scale(.96);
 }
+
+.movie-text{
+font-size:28px;
+line-height:1.8;
+animation:movieText 15s linear forwards;
+}
+
+@keyframes movieText{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:1;
+}
+}
+
 </style>
 </head>
 
@@ -1393,13 +1414,17 @@ document
 
 <h1>The End ✨</h1>
 
-<p>
-Thank you for reading this little website.
+<p class="movie-text">
+Thank you for reading this little surprise.
 <br><br>
-I hope today makes you smile.
+I hope today, this gift can makes you smile.
 <br><br>
 I love you today, tomorrow and always 🖤
-</p>
+<br><br>
+Your beautiful girl
+<br>
+❣️Friska❣️
+</p>>
 
 <div class="more-box">
 
