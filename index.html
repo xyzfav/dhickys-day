@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Dhicky 🖤</title>
+<title>Special Edition For Dhicky 🖤</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,8 +15,8 @@
 }
 
 body{
+  background:#1a1a1a;
   font-family:'Quicksand',sans-serif;
-  background:#050505;
   overflow:hidden;
 }
 
@@ -24,126 +24,67 @@ body{
 #countdown{
   position:fixed;
   inset:0;
+  background:#111;
+  color:#f3e6cf;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:#050505;
-  color:white;
   font-size:90px;
-  z-index:9999;
+  z-index:999;
   transition:1s;
 }
 
 
-#gatePage{
-  position:fixed;
-  inset:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  background:#050505;
-}
-
-.left-door,
-.right-door{
-  position:absolute;
-  top:0;
-  width:50%;
-  height:100%;
-  background:
-  linear-gradient(
-    90deg,
-    #050505,
-    #202020,
-    #505050,
-    #202020,
-    #050505
-  );
-  border:2px solid silver;
-  transition:2s ease;
-  z-index:5;
-}
-
-.left-door{
-  left:0;
-}
-
-.right-door{
-  right:0;
-}
-
-.gate-text{
-  text-align:center;
-  color:white;
-  z-index:10;
-  position:relative;
-  padding:30px;
-}
-
-.gate-text h1{
-  letter-spacing:8px;
-  color:#bdbdbd;
-  font-size:24px;
-}
-
-.gate-text h2{
-  font-size:70px;
-  margin:15px 0;
-  text-shadow:0 0 30px rgba(255,255,255,.4);
-}
-
-.gate-text p{
-  color:#bdbdbd;
-  margin-bottom:40px;
-}
-
-button{
-  padding:16px 35px;
-  border:none;
-  border-radius:50px;
-  background:rgba(255,255,255,.1);
-  color:white;
-  border:1px solid silver;
-  cursor:pointer;
-  font-size:16px;
-}
-
-
-#birthdayPage{
-  position:fixed;
-  inset:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  background:#050505;
-  text-align:center;
-  color:white;
-  padding:30px;
-}
-
-.birthday-content h1{
-  font-size:55px;
-  margin-bottom:30px;
-  font-weight:500;
-}
-
-.birthday-content p{
-  max-width:550px;
-  line-height:1.9;
-  color:#cfcfcf;
-  margin-bottom:45px;
-  font-size:20px;
-}
-
+#coverPage,
+#newsPage,
 #envelopePage{
   position:fixed;
   inset:0;
   display:none;
   justify-content:center;
   align-items:center;
-  background:#050505;
+  background:#1a1a1a;
+  padding:30px;
 }
+
+.paper{
+  width:90%;
+  max-width:700px;
+  background:#f3e6cf;
+  color:#2f2f2f;
+  padding:40px 30px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+.paper h1{
+  font-family:'Cinzel',serif;
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.paper h2{
+  font-size:22px;
+  margin-bottom:25px;
+  letter-spacing:3px;
+}
+
+.paper p{
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+button{
+  padding:15px 35px;
+  border:none;
+  border-radius:50px;
+  background:#2f2f2f;
+  color:#f3e6cf;
+  cursor:pointer;
+  font-size:16px;
+}
+
 
 .envelope{
   width:320px;
@@ -155,14 +96,8 @@ button{
 .envelope-body{
   width:100%;
   height:100%;
-  background:
-  linear-gradient(
-    135deg,
-    #111,
-    #333,
-    #111
-  );
-  border:2px solid silver;
+  background:#2a2a2a;
+  border:2px solid #6b5644;
   border-radius:15px;
 }
 
@@ -171,22 +106,34 @@ button{
   top:0;
   width:100%;
   height:110px;
-  background:
-  linear-gradient(
-    135deg,
-    #444,
-    #111
-  );
+  background:#3a3a3a;
   clip-path:polygon(0 0,100% 0,50% 100%);
   transform-origin:top;
   transition:1s;
+}
+
+.seal{
+  position:absolute;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#6b5644;
+  color:#f3e6cf;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+  font-weight:bold;
 }
 
 .letter{
   position:absolute;
   width:260px;
   height:170px;
-  background:#faf7f2;
+  background:#f3e6cf;
   left:30px;
   top:40px;
   border-radius:10px;
@@ -206,22 +153,18 @@ button{
   transform:rotateX(180deg);
 }
 
+.envelope.open .seal{
+  opacity:0;
+}
+
 @media(max-width:600px){
 
   #countdown{
     font-size:70px;
   }
 
-  .gate-text h2{
-    font-size:48px;
-  }
-
-  .birthday-content h1{
-    font-size:40px;
-  }
-
-  .birthday-content p{
-    font-size:17px;
+  .paper h1{
+    font-size:30px;
   }
 
   .envelope{
@@ -241,44 +184,45 @@ button{
 
 <div id="countdown">⚽⚽⚽</div>
 
-<div id="gatePage">
 
-  <div class="left-door"></div>
-  <div class="right-door"></div>
+<div id="coverPage">
 
-  <div class="gate-text">
-    <h1>FOR SOMEONE SPECIAL</h1>
-    <h2>DHICKY 🖤</h2>
-    <p>31 July 2026 • 12:00 AM ✨</p>
+  <div class="paper">
 
-    <button id="enterBtn">
-      ✨ Enter My Little Universe ✨
+    <h1>THE DAILY CHRONICLE</h1>
+
+    <h2>SPECIAL EDITION</h2>
+
+    <p>
+      31 JULY 2026
+      <br><br>
+      FOR DHICKY 🖤
+    </p>
+
+    <button id="readBtn">
+      📰 Read Today's Story
     </button>
+
   </div>
 
 </div>
+  
+<div id="newsPage">
 
-<div id="birthdayPage">
+  <div class="paper">
 
-  <div class="birthday-content">
-
-    <h1>For You 🖤</h1>
+    <h1>BREAKING NEWS</h1>
 
     <p>
-      This little universe was made especially for you.
+      A Very Special Person
+      Turns One Year Older Today.
       <br><br>
-
-      I hope this new chapter of your life brings
-      happiness, success, beautiful memories,
-      and people who truly care about you.
-      <br><br>
-
-      May every wish in your heart slowly come true
-      and may your smile never fade. ✨
+      A little universe was created
+      especially for you. ✨
     </p>
 
-    <button id="openEnvelope">
-      💌 Open Your Letter
+    <button id="openBtn">
+      💌 Open The Secret Letter
     </button>
 
   </div>
@@ -293,51 +237,42 @@ button{
 
     <div class="envelope-body"></div>
 
-    <div class="letter">
-      <h3>Happy Birthday, Sayang🖤</h3>
-      <br>
-      
+    <div class="seal">D</div>
 
-      I hope all your dreams come true and
-      happiness always finds you. ✨
+    <div class="letter">
+      <h3>Dear Dhicky 🖤</h3>
+      <br>
+      Your letter will be here...
     </div>
 
   </div>
 
 </div>
 
-<audio id="music" loop>
-  <source src="aboutyou.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-const balls = [
-  "⚽⚽⚽",
-  "⚽⚽",
-  "⚽",
-  "✨"
-];
+const balls = ["⚽⚽⚽","⚽⚽","⚽","✨"];
 
 let i = 0;
 
 const countdown =
 document.getElementById("countdown");
 
-const timer = setInterval(() => {
+const timer = setInterval(()=>{
 
   i++;
 
   if(i < balls.length){
     countdown.innerHTML = balls[i];
-  } else {
+  }
+  else{
 
     clearInterval(timer);
 
     countdown.style.opacity = "0";
 
-    setTimeout(() => {
+    setTimeout(()=>{
       countdown.style.display = "none";
-      document.getElementById("gatePage")
+      document.getElementById("coverPage")
         .style.display = "flex";
     },1000);
   }
@@ -345,36 +280,22 @@ const timer = setInterval(() => {
 },1000);
 
 document
-.getElementById("enterBtn")
+.getElementById("readBtn")
 .addEventListener("click",()=>{
 
-  document.getElementById("music").play();
+  document.getElementById("coverPage")
+    .style.display = "none";
 
-  document.querySelector(".left-door")
-    .style.transform =
-    "translateX(-100%)";
-
-  document.querySelector(".right-door")
-    .style.transform =
-    "translateX(100%)";
-
-  setTimeout(()=>{
-
-    document.getElementById("gatePage")
-      .style.display = "none";
-
-    document.getElementById("birthdayPage")
-      .style.display = "flex";
-
-  },2000);
+  document.getElementById("newsPage")
+    .style.display = "flex";
 
 });
 
 document
-.getElementById("openEnvelope")
+.getElementById("openBtn")
 .addEventListener("click",()=>{
 
-  document.getElementById("birthdayPage")
+  document.getElementById("newsPage")
     .style.display = "none";
 
   document.getElementById("envelopePage")
@@ -385,7 +306,9 @@ document
 document
 .getElementById("envelope")
 .addEventListener("click",function(){
+
   this.classList.toggle("open");
+
 });
 </script>
 
