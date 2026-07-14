@@ -20,7 +20,6 @@ body{
   overflow:hidden;
 }
 
-/* COUNTDOWN */
 
   position:fixed;
   inset:0;
@@ -34,7 +33,6 @@ body{
   transition:1s;
 }
 
-/* GATE */
 
   position:fixed;
   inset:0;
@@ -45,7 +43,6 @@ body{
   overflow:hidden;
 }
 
-/* SILVER PARTICLES */
 
   content:"";
   position:absolute;
@@ -56,7 +53,6 @@ body{
   opacity:.25;
 }
 
-/* DOORS */
 
 .left-door,
 .right-door{
@@ -176,7 +172,6 @@ body{
 
 <script>
 
-/* COUNTDOWN */
 
 const balls = [
   "⚽⚽⚽",
@@ -215,7 +210,6 @@ const timer = setInterval(()=>{
 
 },1000);
 
-/* OPEN GATE */
 
 document
 .getElementById("enterBtn")
@@ -234,8 +228,6 @@ document
   setTimeout(()=>{
 
     alert("A letter is waiting for you 💌");
-
-    // nanti di sini muncul amplop
 
   },2000);
 
