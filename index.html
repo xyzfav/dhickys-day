@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Dhicky 🖤</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,42 +15,36 @@
 }
 
 body{
-  background:#050505;
   font-family:'Quicksand',sans-serif;
+  background:#050505;
   overflow:hidden;
 }
+
+/* COUNTDOWN */
 
 #countdown{
   position:fixed;
   inset:0;
-  background:#050505;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:90px;
+  background:#050505;
   color:white;
+  font-size:90px;
   z-index:9999;
   transition:1s;
 }
 
+/* GATE PAGE */
+
 #gatePage{
   position:fixed;
   inset:0;
-  background:#050505;
   display:none;
   justify-content:center;
   align-items:center;
   overflow:hidden;
-}
-
-#gatePage::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-  radial-gradient(#c0c0c0 1px, transparent 1px);
-  background-size:80px 80px;
-  opacity:.25;
+  background:#050505;
 }
 
 .left-door,
@@ -63,68 +57,155 @@ body{
   linear-gradient(
     90deg,
     #050505,
-    #1c1c1c,
-    #3a3a3a,
-    #1c1c1c,
+    #202020,
+    #505050,
+    #202020,
     #050505
   );
-  border:2px solid #7f7f7f;
+  border:2px solid silver;
   transition:2s ease;
   z-index:5;
 }
 
 .left-door{
   left:0;
-  border-right:1px solid silver;
 }
 
 .right-door{
   right:0;
-  border-left:1px solid silver;
 }
 
 .gate-text{
   text-align:center;
   color:white;
   z-index:10;
-  padding:20px;
+  padding:30px;
 }
 
 .gate-text h1{
-  font-size:24px;
   letter-spacing:8px;
   color:#bdbdbd;
+  font-size:24px;
 }
 
 .gate-text h2{
   font-size:70px;
   margin:15px 0;
-  color:white;
-  text-shadow:
-  0 0 20px rgba(255,255,255,.4);
+  text-shadow:0 0 30px rgba(255,255,255,.4);
 }
 
 .gate-text p{
-  color:#a3a3a3;
-  margin-bottom:45px;
-  font-size:18px;
+  color:#bdbdbd;
+  margin-bottom:40px;
 }
 
-#enterBtn{
+button{
   padding:16px 35px;
+  border:none;
   border-radius:50px;
-  border:1px solid silver;
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.1);
   color:white;
-  font-size:16px;
+  border:1px solid silver;
   cursor:pointer;
-  backdrop-filter:blur(10px);
-  transition:.4s;
+  font-size:16px;
 }
 
-#enterBtn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px rgba(255,255,255,.2);
+/* BIRTHDAY PAGE */
+
+#birthdayPage{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:#050505;
+  text-align:center;
+  color:white;
+  padding:30px;
+}
+
+.birthday-content h1{
+  font-size:48px;
+  margin-bottom:30px;
+}
+
+.birthday-content p{
+  max-width:500px;
+  line-height:1.8;
+  color:#cfcfcf;
+  margin-bottom:40px;
+}
+
+/* ENVELOPE */
+
+#envelopePage{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:#050505;
+}
+
+.envelope{
+  width:320px;
+  height:220px;
+  position:relative;
+  cursor:pointer;
+}
+
+.envelope-body{
+  width:100%;
+  height:100%;
+  background:
+  linear-gradient(
+    135deg,
+    #111,
+    #333,
+    #111
+  );
+  border:2px solid silver;
+  border-radius:15px;
+}
+
+.envelope-flap{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:110px;
+  background:
+  linear-gradient(
+    135deg,
+    #444,
+    #111
+  );
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:1s;
+}
+
+.letter{
+  position:absolute;
+  width:260px;
+  height:170px;
+  background:#faf7f2;
+  left:30px;
+  top:40px;
+  border-radius:10px;
+  padding:20px;
+  color:#333;
+  transform:translateY(80px);
+  transition:1s;
+  opacity:0;
+}
+
+.envelope.open .letter{
+  transform:translateY(-80px);
+  opacity:1;
+}
+
+.envelope.open .envelope-flap{
+  transform:rotateX(180deg);
 }
 
 @media(max-width:600px){
@@ -137,9 +218,18 @@ body{
     font-size:48px;
   }
 
-  .gate-text h1{
-    font-size:18px;
-    letter-spacing:5px;
+  .birthday-content h1{
+    font-size:38px;
+  }
+
+  .envelope{
+    width:280px;
+    height:200px;
+  }
+
+  .letter{
+    width:230px;
+    left:25px;
   }
 }
 </style>
@@ -155,18 +245,53 @@ body{
   <div class="right-door"></div>
 
   <div class="gate-text">
-
     <h1>HAPPY BIRTHDAY</h1>
-
     <h2>DHICKY</h2>
-
-    <p>
-      31 July 2026 • 12:00 AM ✨
-    </p>
+    <p>31 July 2026 • 12:00 AM ✨</p>
 
     <button id="enterBtn">
       ✨ Enter My Little Universe ✨
     </button>
+  </div>
+
+</div>
+
+<div id="birthdayPage">
+
+  <div class="birthday-content">
+
+    <h1>Happy Birthday Dhicky 🖤</h1>
+
+    <p>
+      Today is all about you.<br><br>
+      I hope your new age brings happiness,
+      success and beautiful memories.
+      Thank you for being part of my world. ✨
+    </p>
+
+    <button id="openEnvelope">
+      💌 Open Your Letter
+    </button>
+
+  </div>
+
+</div>
+
+<div id="envelopePage">
+
+  <div class="envelope" id="envelope">
+
+    <div class="envelope-flap"></div>
+
+    <div class="envelope-body"></div>
+
+    <div class="letter">
+      <h3>Dear Dhicky 🖤</h3>
+      <br>
+      Happy Birthday, Sayang.<br><br>
+      I hope all your dreams come true and
+      happiness always finds you. ✨
+    </div>
 
   </div>
 
@@ -177,6 +302,7 @@ body{
 </audio>
 
 <script>
+
 const balls = [
   "⚽⚽⚽",
   "⚽⚽",
@@ -188,9 +314,6 @@ let i = 0;
 
 const countdown =
 document.getElementById("countdown");
-
-const gatePage =
-document.getElementById("gatePage");
 
 const timer = setInterval(() => {
 
@@ -206,11 +329,11 @@ const timer = setInterval(() => {
     countdown.style.opacity = "0";
 
     setTimeout(() => {
-
       countdown.style.display = "none";
-      gatePage.style.display = "flex";
-
+      document.getElementById("gatePage")
+        .style.display = "flex";
     },1000);
+
   }
 
 },1000);
@@ -231,11 +354,36 @@ document
 
   setTimeout(()=>{
 
-    alert("A letter is waiting for you 💌");
+    document.getElementById("gatePage")
+      .style.display = "none";
+
+    document.getElementById("birthdayPage")
+      .style.display = "flex";
 
   },2000);
 
 });
+
+document
+.getElementById("openEnvelope")
+.addEventListener("click",()=>{
+
+  document.getElementById("birthdayPage")
+    .style.display = "none";
+
+  document.getElementById("envelopePage")
+    .style.display = "flex";
+
+});
+
+document
+.getElementById("envelope")
+.addEventListener("click",function(){
+
+  this.classList.toggle("open");
+
+});
+
 </script>
 
 </body>
