@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dhicky 🖤</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  font-family:'Quicksand',sans-serif;
+  overflow:hidden;
+}
+
+/* COUNTDOWN */
+
+  position:fixed;
+  inset:0;
+  background:#050505;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:90px;
+  color:white;
+  z-index:9999;
+  transition:1s;
+}
+
+/* GATE */
+
+  position:fixed;
+  inset:0;
+  background:#050505;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SILVER PARTICLES */
+
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+  radial-gradient(#c0c0c0 1px, transparent 1px);
+  background-size:80px 80px;
+  opacity:.25;
+}
+
+/* DOORS */
+
+.left-door,
+.right-door{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  background:
+  linear-gradient(
+    90deg,
+
+  );
+  border:2px solid #7f7f7f;
+  transition:2s ease;
+  z-index:5;
+}
+
+.left-door{
+  left:0;
+  border-right:1px solid silver;
+}
+
+.right-door{
+  right:0;
+  border-left:1px solid silver;
+}
+
+
+.gate-text{
+  text-align:center;
+  color:white;
+  z-index:2;
+  padding:20px;
+}
+
+.gate-text h1{
+  font-size:24px;
+  letter-spacing:6px;
+  color:#bdbdbd;
+}
+
+.gate-text h2{
+  font-size:70px;
+  margin:15px 0;
+  color:white;
+  text-shadow:
+  0 0 20px rgba(255,255,255,.4);
+}
+
+.gate-text p{
+  color:#a3a3a3;
+  margin-bottom:45px;
+  font-size:18px;
+}
+
+#enterBtn{
+  padding:16px 35px;
+  border-radius:50px;
+  border:1px solid silver;
+  background:rgba(255,255,255,.08);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  transition:.4s;
+}
+
+#enterBtn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+@media(max-width:600px){
+
+  #countdown{
+    font-size:70px;
+  }
+
+  .gate-text h2{
+    font-size:48px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="countdown">⚽⚽⚽</div>
+
+<div id="gatePage">
+
+  <div class="left-door"></div>
+  <div class="right-door"></div>
+
+  <div class="gate-text">
+
+    <h1>HAPPY BIRTHDAY</h1>
+
+    <h2>DHICKY</h2>
+
+    <p>
+      31 July 2026 • 12:00 AM ✨
+    </p>
+
+    <button id="enterBtn">
+      ✨ Enter My Little Universe ✨
+    </button>
+
+  </div>
+
+</div>
+
+<audio id="music" loop>
+  <source src="aboutyou.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* COUNTDOWN */
+
+const balls = [
+  "⚽⚽⚽",
+  "⚽⚽",
+  "⚽",
+  "✨"
+];
+
+let i = 0;
+
+const countdown =
+document.getElementById("countdown");
+
+const timer = setInterval(()=>{
+
+  i++;
+
+  if(i < balls.length){
+    countdown.innerHTML = balls[i];
+  }
+  else{
+
+    clearInterval(timer);
+
+    countdown.style.opacity = "0";
+
+    setTimeout(()=>{
+
+      countdown.style.display = "none";
+
+      document.getElementById("gatePage")
+        .style.display = "flex";
+
+    },1000);
+  }
+
+},1000);
+
+/* OPEN GATE */
+
+document
+.getElementById("enterBtn")
+.addEventListener("click",()=>{
+
+  document.getElementById("music").play();
+
+  document.querySelector(".left-door")
+    .style.transform =
+    "translateX(-100%)";
+
+  document.querySelector(".right-door")
+    .style.transform =
+    "translateX(100%)";
+
+  setTimeout(()=>{
+
+    alert("A letter is waiting for you 💌");
+
+    // nanti di sini muncul amplop
+
+  },2000);
+
+});
+
+</script>
+
+</body>
+</html>
