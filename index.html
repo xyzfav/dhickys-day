@@ -545,6 +545,12 @@ document
 
 function openEnvelope(){
 
+const music = document.getElementById("bgMusic");
+
+music.play().catch(err=>{
+  console.log("Autoplay blocked:", err);
+});
+
 document
 .getElementById("newspaper")
 .classList.remove("active");
@@ -717,6 +723,8 @@ initScratch();
 
 }
 </script>
-
+<audio id="bgMusic" loop>
+  <source src="The 1975 - About You.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
