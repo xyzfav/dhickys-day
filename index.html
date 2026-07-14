@@ -412,6 +412,75 @@ animation:blink .8s infinite;
 opacity:0;
 }
 }
+
+#starPage{
+background:#050816;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+}
+
+.night-sky{
+text-align:center;
+position:relative;
+}
+
+.constellation{
+display:flex;
+gap:50px;
+font-size:90px;
+font-family:'Cinzel',serif;
+color:white;
+}
+
+.constellation span{
+position:relative;
+animation:twinkle 2s infinite alternate;
+}
+
+.constellation span::before{
+content:"✨";
+position:absolute;
+top:-25px;
+right:-20px;
+font-size:25px;
+}
+
+.star-text{
+margin-top:40px;
+font-size:24px;
+color:#f3e8d2;
+}
+
+@keyframes twinkle{
+from{
+opacity:.5;
+}
+to{
+opacity:1;
+text-shadow:
+0 0 15px white,
+0 0 30px white;
+}
+}
+
+#cakePage{
+background:#f5ecda;
+justify-content:center;
+align-items:center;
+}
+
+.cake-box{
+text-align:center;
+}
+
+#cake{
+font-size:90px;
+margin:40px 0;
+transition:1s;
+}
+  
 </style>
 </head>
 
@@ -556,11 +625,60 @@ every smile, and every moment.
 
 Happy Birthday, Dhicky 🖤
 </p>
+
+<button class="btn" onclick="openStarPage()">
+See The Stars ✨
+</button>
+</p>
 </div>
 
 </div>
 </div>
 
+<div id="starPage" class="page">
+
+  <div class="night-sky">
+
+    <div class="constellation">
+      <span>D</span>
+      <span>T</span>
+      <span>F</span>
+    </div>
+
+    <p class="star-text">
+      Some stars are meant to shine together ✨
+    </p>
+
+    <button class="btn" onclick="openCake()">
+      One Last Surprise →
+    </button>
+
+  </div>
+
+</div>
+
+<div id="cakePage" class="page">
+
+<div class="cake-box">
+
+<h1>Happy Birthday Dhicky 🎂</h1>
+
+<div id="cake">
+🕯️🎂🕯️
+</div>
+
+<p>
+Make a wish and blow the candle.
+</p>
+
+<button class="btn" onclick="blowCandle()">
+Blow Candle
+</button>
+
+</div>
+
+</div>
+  
 <script>
 
 let n = 3;
@@ -865,20 +983,44 @@ scratch
 
 
 
-function openGallery(){
-
-document
-.getElementById("letterPage")
-.classList.remove("active");
+function openStarPage(){
 
 document
 .getElementById("galleryPage")
-.classList.add("active");
+.classList.remove("active");
 
-initScratch();
+document
+.getElementById("starPage")
+.classList.add("active");
 
 }
 
+function openCake(){
+
+document
+.getElementById("starPage")
+.classList.remove("active");
+
+document
+.getElementById("cakePage")
+.classList.add("active");
+
+}
+
+function blowCandle(){
+
+document.getElementById("cake")
+.innerHTML = "🎂";
+
+setTimeout(()=>{
+
+alert(
+"Happy Birthday, Dhicky 🖤\nMay all your wishes come true."
+);
+
+},500);
+
+}
 </script>
 <audio id="bgMusic" loop>
   <source src="0715.MP3" type="audio/mpeg">
