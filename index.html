@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Edition For Dhicky 🖤</title>
+<title>The Daily Chronicle</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,301 +15,134 @@
 }
 
 body{
-  background:#1a1a1a;
-  font-family:'Quicksand',sans-serif;
-  overflow:hidden;
-}
-
-
-#countdown{
-  position:fixed;
-  inset:0;
   background:#111;
-  color:#f3e6cf;
+  font-family:'Quicksand',sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:90px;
-  z-index:999;
-  transition:1s;
+  min-height:100vh;
+  padding:20px;
 }
 
-
-#coverPage,
-#newsPage,
-#envelopePage{
-  position:fixed;
-  inset:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  background:#1a1a1a;
-  padding:30px;
-}
-
-.paper{
-  width:90%;
+.newspaper{
+  width:100%;
   max-width:700px;
-  background:#f3e6cf;
-  color:#2f2f2f;
+  background:#efe5d3;
+  border-radius:25px;
   padding:40px 30px;
-  border-radius:15px;
   text-align:center;
-  box-shadow:0 15px 35px rgba(0,0,0,.4);
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
 }
 
-.paper h1{
-  font-family:'Cinzel',serif;
-  font-size:38px;
-  margin-bottom:15px;
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;
+  font-weight:700;
+  color:#2c2c2c;
 }
 
-.paper h2{
+.edition{
+  letter-spacing:8px;
+  margin-top:10px;
+  color:#444;
+  font-size:15px;
+}
+
+.date{
+  margin:35px 0;
   font-size:22px;
-  margin-bottom:25px;
-  letter-spacing:3px;
+  color:#444;
 }
 
-.paper p{
+.headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:45px;
+  color:#222;
+  margin-bottom:25px;
+}
+
+.cover-photo{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:25px;
+}
+
+.text{
+  font-size:18px;
   line-height:1.8;
-  margin-bottom:30px;
+  color:#444;
 }
 
 button{
-  padding:15px 35px;
+  margin-top:40px;
   border:none;
+  background:#1f1f1f;
+  color:white;
+  padding:18px 40px;
   border-radius:50px;
-  background:#2f2f2f;
-  color:#f3e6cf;
+  font-size:18px;
   cursor:pointer;
-  font-size:16px;
-}
-
-
-.envelope{
-  width:320px;
-  height:220px;
-  position:relative;
-  cursor:pointer;
-}
-
-.envelope-body{
-  width:100%;
-  height:100%;
-  background:#2a2a2a;
-  border:2px solid #6b5644;
-  border-radius:15px;
-}
-
-.envelope-flap{
-  position:absolute;
-  top:0;
-  width:100%;
-  height:110px;
-  background:#3a3a3a;
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:top;
-  transition:1s;
-}
-
-.seal{
-  position:absolute;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:#6b5644;
-  color:#f3e6cf;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  left:50%;
-  top:48%;
-  transform:translate(-50%,-50%);
-  z-index:5;
-  font-weight:bold;
-}
-
-.letter{
-  position:absolute;
-  width:260px;
-  height:170px;
-  background:#f3e6cf;
-  left:30px;
-  top:40px;
-  border-radius:10px;
-  padding:20px;
-  color:#333;
-  transform:translateY(80px);
-  transition:1s;
-  opacity:0;
-}
-
-.envelope.open .letter{
-  transform:translateY(-80px);
-  opacity:1;
-}
-
-.envelope.open .envelope-flap{
-  transform:rotateX(180deg);
-}
-
-.envelope.open .seal{
-  opacity:0;
 }
 
 @media(max-width:600px){
 
-  #countdown{
-    font-size:70px;
+  .logo{
+    font-size:42px;
   }
 
-  .paper h1{
-    font-size:30px;
+  .headline{
+    font-size:34px;
   }
 
-  .envelope{
-    width:280px;
-    height:200px;
+  .date{
+    font-size:18px;
   }
 
-  .letter{
-    width:230px;
-    left:25px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<div id="countdown">⚽⚽⚽</div>
+<div class="newspaper">
 
-
-<div id="coverPage">
-
-  <div class="paper">
-
-    <h1>THE DAILY CHRONICLE</h1>
-
-    <h2>SPECIAL EDITION</h2>
-
-    <p>
-      31 JULY 2026
-      <br><br>
-      FOR DHICKY 🖤
-    </p>
-
-    <button id="readBtn">
-      📰 Read Today's Story
-    </button>
-
+  <div class="logo">
+    THE DAILY CHRONICLE
   </div>
 
-</div>
-  
-<div id="newsPage">
-
-  <div class="paper">
-
-    <h1>BREAKING NEWS</h1>
-
-    <p>
-      A Very Special Person
-      Turns One Year Older Today.
-      <br><br>
-      A little universe was created
-      especially for you. ✨
-    </p>
-
-    <button id="openBtn">
-      💌 Open The Secret Letter
-    </button>
-
+  <div class="edition">
+    SPECIAL EDITION
   </div>
 
-</div>
-
-<div id="envelopePage">
-
-  <div class="envelope" id="envelope">
-
-    <div class="envelope-flap"></div>
-
-    <div class="envelope-body"></div>
-
-    <div class="seal">D</div>
-
-    <div class="letter">
-      <h3>Dear Dhicky 🖤</h3>
-      <br>
-      Your letter will be here...
-    </div>
-
+  <div class="date">
+    31 JULY 2026
   </div>
+
+  <div class="headline">
+    THE MAN OF THE DAY
+  </div>
+
+  <img src="cover.jpg" class="cover-photo">
+
+  <div class="text">
+    Today we celebrate someone special.
+    Another year of life, another chapter,
+    and another reason to smile.
+    <br><br>
+    This special edition is dedicated to
+    Dhicky 🖤
+  </div>
+
+  <button onclick="nextPage()">
+    📰 Read Today's Story
+  </button>
 
 </div>
 
 <script>
-const balls = ["⚽⚽⚽","⚽⚽","⚽","✨"];
-
-let i = 0;
-
-const countdown =
-document.getElementById("countdown");
-
-const timer = setInterval(()=>{
-
-  i++;
-
-  if(i < balls.length){
-    countdown.innerHTML = balls[i];
-  }
-  else{
-
-    clearInterval(timer);
-
-    countdown.style.opacity = "0";
-
-    setTimeout(()=>{
-      countdown.style.display = "none";
-      document.getElementById("coverPage")
-        .style.display = "flex";
-    },1000);
-  }
-
-},1000);
-
-document
-.getElementById("readBtn")
-.addEventListener("click",()=>{
-
-  document.getElementById("coverPage")
-    .style.display = "none";
-
-  document.getElementById("newsPage")
-    .style.display = "flex";
-
-});
-
-document
-.getElementById("openBtn")
-.addEventListener("click",()=>{
-
-  document.getElementById("newsPage")
-    .style.display = "none";
-
-  document.getElementById("envelopePage")
-    .style.display = "flex";
-
-});
-
-document
-.getElementById("envelope")
-.addEventListener("click",function(){
-
-  this.classList.toggle("open");
-
-});
+function nextPage(){
+  alert("Halaman artikel dan scrapbook nanti kita sambungkan di tahap berikutnya ✨");
+}
 </script>
 
 </body>
