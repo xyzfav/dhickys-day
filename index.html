@@ -143,12 +143,22 @@ font-size:22px;
 }
 
 }
+  
 #envelopePage,
-#letterPage,
-#galleryPage{
-justify-content:center;
+#letterPage{
+justify-content:flex-start;
 align-items:center;
 background:#ece3d0;
+padding-top:80px;
+overflow:auto;
+}
+
+#galleryPage{
+justify-content:center;
+align-items:flex-start;
+background:#ece3d0;
+overflow:auto;
+padding-top:40px;
 }
 
 .vintage-envelope{
@@ -178,12 +188,17 @@ margin-bottom:20px;
 }
 
 .letter-paper{
-background:#f8f1e4;
-max-width:700px;
-padding:40px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-font-size:28px;
-line-height:1.8;
+  background:#f7eedc;
+  max-width:700px;
+  padding:60px 45px;
+  border:2px solid #c9b48d;
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.2),
+  inset 0 0 40px rgba(0,0,0,.08);
+  font-size:30px;
+  line-height:1.9;
+  color:#2f2a24;
+  position:relative;
 }
 
 .letter-paper h1{
@@ -192,28 +207,123 @@ margin-bottom:30px;
 font-family:'Cinzel',serif;
 }
 
-.scrapbook{
-max-width:900px;
-padding:40px;
+.letter-paper::before{
+  content:"✦";
+  position:absolute;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:30px;
+  color:#9a7c54;
+}
+
+.letter-paper h1{
+  margin-top:20px;
+  margin-bottom:40px;
+  text-align:center;
+  font-family:'Cinzel',serif;
+  font-size:42px;
+}
+
+.letter-paper p{
+  text-align:justify;
+}
+  
+.memory-title{
+font-family:'Cinzel',serif;
+font-size:50px;
+text-align:center;
+margin-bottom:30px;
+color:#2f2a24;
+}
+
+.memory-book{
+width:100%;
+max-width:800px;
+padding:100px 20px 80px;
+display:flex;
+flex-direction:column;
+gap:60px;
+margin:auto;
+}
+
+.book-page{
+position:relative;
+background:linear-gradient(
+180deg,
+#f8f0df,
+#f1e4cc
+);
+padding:35px 35px 35px 80px;
+border:2px solid #d2be96;
+border-radius:8px;
+box-shadow:
+0 15px 30px rgba(0,0,0,.2),
+inset 0 0 30px rgba(0,0,0,.05);
+transform:rotate(-1deg);
+}
+
+.book-page:nth-child(even){
+transform:rotate(1deg);
+}
+
+.book-page::before{
+content:"";
+position:absolute;
+top:0;
+bottom:0;
+left:45px;
+width:2px;
+background:#d7c5a3;
+}
+
+.book-page img{
+width:100%;
+border:12px solid white;
+border-radius:5px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+margin-bottom:30px;
+}
+
+.book-page h2{
+font-family:'Cinzel',serif;
+font-size:34px;
+margin-bottom:20px;
 text-align:center;
 }
 
-.photos{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-margin:40px 0;
+.book-page p{
+font-size:28px;
+line-height:1.8;
+text-align:center;
 }
 
-.photos img{
-width:100%;
-border:15px solid white;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-transform:rotate(-2deg);
+@media(max-width:600px){
+
+.memory-title{
+font-size:35px;
 }
 
-.photos img:nth-child(even){
-transform:rotate(2deg);
+.memory-book{
+padding-top:60px;
+}
+
+.book-page{
+padding:25px 25px 25px 55px;
+}
+
+.book-page::before{
+left:30px;
+}
+
+.book-page h2{
+font-size:26px;
+}
+
+.book-page p{
+font-size:22px;
+}
+
 }
 </style>
 </head>
@@ -254,12 +364,6 @@ DHICKY, MY BELOVED BOYFRIEND
 Today we celebrate someone special.
 Another year older, another chapter,
 and another reason to smile. 🖤
-</div>
-
-<button class="btn" onclick="openEnvelope()">
-Continue Reading
-</button>
-
 </div>
 
 <button class="btn" onclick="openEnvelope()">
@@ -320,28 +424,62 @@ Continue Reading
 
 <div id="galleryPage" class="page">
 
-  <div class="scrapbook">
+<div class="memory-book">
 
-    <h1>Our Memories ✨</h1>
+<h1 class="memory-title">
+Our Memories ✨
+</h1>
+<div class="book-page">
+<img src="together.jpg">
+<h2>Our First Memory</h2>
+<p>
+One of my favorite moments.
+A picture that always makes me smile.
+</p>
+</div>
 
-    <div class="photos">
-      <img src="together.jpg">
-      <img src="cake.jpg">
-      <img src="bonsai.jpg">
-      <img src="look.jpg">
-      <img src="card.jpg">
-    </div>
+<div class="book-page">
+<img src="cake.jpg">
+<h2>Birthday Night</h2>
+<p>
+A sweet celebration that became
+another beautiful memory.
+</p>
+</div>
 
-    <p>
-      Every picture tells a story,
-      and every story reminds me
-      how lucky I am to know you.
-    </p>
+<div class="book-page">
+<img src="bonsai.jpg">
+<h2>Little Moments</h2>
+<p>
+Sometimes the simplest moments
+become the most precious ones.
+</p>
+</div>
 
-  </div>
+<div class="book-page">
+<img src="look.jpg">
+<h2>You</h2>
+<p>
+A photo that reminds me how lucky
+I am to know you.
+</p>
+</div>
+
+<div class="book-page">
+<img src="card.jpg">
+<h2>The End</h2>
+<p>
+Thank you for every memory,
+every smile, and every moment.
+
+Happy Birthday, Dhicky 🖤
+</p>
+</div>
 
 </div>
-  <script>
+</div>
+
+<script>
 
 let n = 3;
 const countdown =
