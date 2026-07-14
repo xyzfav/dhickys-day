@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Dhicky 🖤</title>
+<title>For Dhicky 🖤</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -77,6 +77,7 @@ body{
   text-align:center;
   color:white;
   z-index:10;
+  position:relative;
   padding:30px;
 }
 
@@ -122,17 +123,18 @@ button{
 }
 
 .birthday-content h1{
-  font-size:48px;
+  font-size:55px;
   margin-bottom:30px;
+  font-weight:500;
 }
 
 .birthday-content p{
-  max-width:500px;
-  line-height:1.8;
+  max-width:550px;
+  line-height:1.9;
   color:#cfcfcf;
-  margin-bottom:40px;
+  margin-bottom:45px;
+  font-size:20px;
 }
-
 
 #envelopePage{
   position:fixed;
@@ -215,7 +217,11 @@ button{
   }
 
   .birthday-content h1{
-    font-size:38px;
+    font-size:40px;
+  }
+
+  .birthday-content p{
+    font-size:17px;
   }
 
   .envelope{
@@ -241,8 +247,8 @@ button{
   <div class="right-door"></div>
 
   <div class="gate-text">
-    <h1>HAPPY BIRTHDAY</h1>
-    <h2>DHICKY</h2>
+    <h1>FOR SOMEONE SPECIAL</h1>
+    <h2>DHICKY 🖤</h2>
     <p>31 July 2026 • 12:00 AM ✨</p>
 
     <button id="enterBtn">
@@ -256,13 +262,19 @@ button{
 
   <div class="birthday-content">
 
-    <h1>Happy Birthday Dhicky 🖤</h1>
+    <h1>For You 🖤</h1>
 
     <p>
-      Today is all about you.<br><br>
-      I hope your new age brings happiness,
-      success and beautiful memories.
-      Thank you for being part of my world. ✨
+      This little universe was made especially for you.
+      <br><br>
+
+      I hope this new chapter of your life brings
+      happiness, success, beautiful memories,
+      and people who truly care about you.
+      <br><br>
+
+      May every wish in your heart slowly come true
+      and may your smile never fade. ✨
     </p>
 
     <button id="openEnvelope">
@@ -282,9 +294,10 @@ button{
     <div class="envelope-body"></div>
 
     <div class="letter">
-      <h3>Dear Dhicky 🖤</h3>
+      <h3>Happy Birthday, Sayang🖤</h3>
       <br>
-      Happy Birthday, Sayang.<br><br>
+      
+
       I hope all your dreams come true and
       happiness always finds you. ✨
     </div>
@@ -298,7 +311,6 @@ button{
 </audio>
 
 <script>
-
 const balls = [
   "⚽⚽⚽",
   "⚽⚽",
@@ -317,8 +329,7 @@ const timer = setInterval(() => {
 
   if(i < balls.length){
     countdown.innerHTML = balls[i];
-  }
-  else{
+  } else {
 
     clearInterval(timer);
 
@@ -329,7 +340,6 @@ const timer = setInterval(() => {
       document.getElementById("gatePage")
         .style.display = "flex";
     },1000);
-
   }
 
 },1000);
@@ -375,11 +385,8 @@ document
 document
 .getElementById("envelope")
 .addEventListener("click",function(){
-
   this.classList.toggle("open");
-
 });
-
 </script>
 
 </body>
