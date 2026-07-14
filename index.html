@@ -530,27 +530,25 @@ transition:1s;
 .candle::before{
 content:"";
 position:absolute;
-width:18px;
-height:24px;
-background:gold;
+width:16px;
+height:22px;
+background:linear-gradient(#ffd84d,#ff9f1a);
 border-radius:50% 50% 50% 50%;
 top:-18px;
 left:50%;
 transform:translateX(-50%);
 box-shadow:
-0 0 15px gold,
-0 0 30px orange;
+0 0 12px #ffd84d,
+0 0 24px #ffb347;
 animation:flicker .8s infinite alternate;
 }
 
 @keyframes flicker{
 from{
 transform:translateX(-50%) scale(1);
-opacity:1;
 }
 to{
-transform:translateX(-50%) scale(1.15);
-opacity:.8;
+transform:translateX(-50%) scale(1.12);
 }
 }
 
