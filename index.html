@@ -721,24 +721,22 @@ box-shadow:
 transform:scale(.96);
 }
 
+.ending-card{
+  overflow:hidden;
+}
+
 .movie-text{
-font-size:28px;
-line-height:1.8;
-animation:movieText 15s linear forwards;
+  position:relative;
+  animation:movieText 15s linear infinite;
 }
 
 @keyframes movieText{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-10%{
-opacity:1;
-}
-100%{
-transform:translateY(-100vh);
-opacity:1;
-}
+  from{
+    transform:translateY(300px);
+  }
+  to{
+    transform:translateY(-400px);
+  }
 }
 
 </style>
@@ -970,7 +968,7 @@ style="width:100%; border-radius:20px;">
 
 <div id="endingPage" class="page">
 
-  <div class="ending-card">
+  <div class="movie-text">
 
     <h1>The End ✨</h1>
 
@@ -1424,7 +1422,7 @@ I love you today, tomorrow and always 🖤
 Your beautiful girl
 <br>
 ❀ Friska ❀
-</p>>
+</p>
 
 <div class="more-box">
 
