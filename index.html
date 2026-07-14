@@ -168,12 +168,21 @@ width:320px;
 height:220px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,.2);
+animation: float 3s ease-in-out infinite;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 margin:auto;
+}
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
 }
 
 .seal{
@@ -326,7 +335,31 @@ font-size:26px;
 .book-page p{
 font-size:22px;
 }
+}
 
+.scratchCanvas{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:100;
+touch-action:none;
+border-radius:8px;
+}
+
+.book-page{
+overflow:hidden;
+}
+#typingText::after{
+content:"|";
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
 }
 </style>
 </head>
@@ -400,22 +433,7 @@ Continue Reading
 
     <h1>A Letter To You</h1>
 
-    <p>
-      Happy Birthday, Sayang.
-      <br><br>
-      Thank you for being part of my life and
-      for bringing so many beautiful memories.
-      <br><br>
-      I hope this new year of your life brings
-      happiness, success, good health, and
-      everything you've been wishing for.
-      <br><br>
-      May your days always be filled with love,
-      laughter, and people who genuinely care
-      about you.
-      <br><br>
-      Thank you for existing. 🖤
-    </p>
+    <p id="typingText"></p>
 
     <button class="btn" onclick="openGallery()">
       Our Memories →
@@ -433,6 +451,7 @@ Continue Reading
 Our Memories ✨
 </h1>
 <div class="book-page">
+<canvas class="scratchCanvas"></canvas>
 <img src="together.jpg">
 <h2>One Of My Favorites</h2>
 <p>
@@ -442,6 +461,7 @@ but a very special memory.
 </div>
 
 <div class="book-page">
+<canvas class="scratchCanvas"></canvas>
 <img src="cake.jpg">
 <h2>A Beautiful Memory</h2>
 <p>
@@ -451,6 +471,7 @@ close to my heart.
 </div>
 
 <div class="book-page">
+<canvas class="scratchCanvas"></canvas>
 <img src="bonsai.jpg">
 <h2>You Make Me Smile</h2>
 <p>
@@ -460,6 +481,7 @@ my heart feels a little happier.
 </div>
 
 <div class="book-page">
+<canvas class="scratchCanvas"></canvas>
 <img src="card.jpg">
 <h2>YOU</h2>
 <p>
@@ -469,6 +491,7 @@ and this is one of them.
 </div>
 
 <div class="book-page">
+<canvas class="scratchCanvas"></canvas>
 <img src="look.jpg">
 <h2>The End</h2>
 <p>
@@ -538,8 +561,150 @@ document
 .getElementById("letterPage")
 .classList.add("active");
 
+typeLetter();
+
+}
+const message =
+`Happy Birthday, Sayang.
+
+Thank you for being part of my life and for bringing so many beautiful memories.
+
+I hope this new year of your life brings happiness, success, good health, and everything you've been wishing for.
+
+May your days always be filled with love, laughter, and people who genuinely care about you.
+
+Thank you for existing. 🖤`;
+
+let i = 0;
+
+function typeLetter(){
+
+const text =
+document.getElementById("typingText");
+
+text.innerHTML = "";
+i = 0;
+
+function typing(){
+
+if(i < message.length){
+
+if(message.charAt(i) === "\n"){
+text.innerHTML += "<br>";
+}else{
+text.innerHTML += message.charAt(i);
 }
 
+i++;
+setTimeout(typing,40);
+}
+
+}
+
+typing();
+}
+  
+function initScratch(){
+
+document
+.querySelectorAll(".scratchCanvas")
+.forEach(canvas=>{
+
+if(canvas.dataset.ready) return;
+canvas.dataset.ready = true;
+
+const card = canvas.parentElement;
+
+canvas.width = card.offsetWidth;
+canvas.height = card.offsetHeight;
+
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle="#c9b48d";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#fff";
+ctx.font="bold 26px Cinzel";
+ctx.textAlign="center";
+ctx.fillText(
+"Scratch Here ✨",
+canvas.width/2,
+canvas.height/2
+);
+
+ctx.globalCompositeOperation="destination-out";
+
+let scratching = false;
+
+function scratch(e){
+
+if(!scratching) return;
+
+const rect = canvas.getBoundingClientRect();
+
+let x,y;
+
+if(e.touches){
+x = e.touches[0].clientX - rect.left;
+y = e.touches[0].clientY - rect.top;
+}else{
+x = e.clientX - rect.left;
+y = e.clientY - rect.top;
+}
+
+ctx.beginPath();
+ctx.arc(x,y,35,0,Math.PI*2);
+ctx.fill();
+}
+
+canvas.addEventListener(
+"mousedown",
+()=> scratching = true
+);
+
+canvas.addEventListener(
+"mouseup",
+()=> scratching = false
+);
+
+canvas.addEventListener(
+"mouseleave",
+()=> scratching = false
+);
+
+canvas.addEventListener(
+"mousemove",
+scratch
+);
+
+canvas.addEventListener(
+"touchstart",
+function(e){
+e.preventDefault();
+scratching = true;
+scratch(e);
+},
+{passive:false}
+);
+
+canvas.addEventListener(
+"touchend",
+()=> scratching = false
+);
+
+canvas.addEventListener(
+"touchmove",
+function(e){
+e.preventDefault();
+scratch(e);
+},
+{passive:false}
+);
+
+});
+
+}
+  
 function openGallery(){
 
 document
@@ -550,8 +715,9 @@ document
 .getElementById("galleryPage")
 .classList.add("active");
 
-}
+initScratch();
 
+}
 </script>
 
 </body>
