@@ -20,7 +20,7 @@ body{
   overflow:hidden;
 }
 
-
+#countdown{
   position:fixed;
   inset:0;
   background:#050505;
@@ -33,7 +33,7 @@ body{
   transition:1s;
 }
 
-
+#gatePage{
   position:fixed;
   inset:0;
   background:#050505;
@@ -43,7 +43,7 @@ body{
   overflow:hidden;
 }
 
-
+#gatePage::before{
   content:"";
   position:absolute;
   inset:0;
@@ -52,7 +52,6 @@ body{
   background-size:80px 80px;
   opacity:.25;
 }
-
 
 .left-door,
 .right-door{
@@ -63,7 +62,11 @@ body{
   background:
   linear-gradient(
     90deg,
-
+    #050505,
+    #1c1c1c,
+    #3a3a3a,
+    #1c1c1c,
+    #050505
   );
   border:2px solid #7f7f7f;
   transition:2s ease;
@@ -80,7 +83,6 @@ body{
   border-left:1px solid silver;
 }
 
-
 .gate-text{
   text-align:center;
   color:white;
@@ -90,7 +92,7 @@ body{
 
 .gate-text h1{
   font-size:24px;
-  letter-spacing:6px;
+  letter-spacing:8px;
   color:#bdbdbd;
 }
 
@@ -135,6 +137,10 @@ body{
     font-size:48px;
   }
 
+  .gate-text h1{
+    font-size:18px;
+    letter-spacing:5px;
+  }
 }
 </style>
 </head>
@@ -171,8 +177,6 @@ body{
 </audio>
 
 <script>
-
-
 const balls = [
   "⚽⚽⚽",
   "⚽⚽",
@@ -185,7 +189,10 @@ let i = 0;
 const countdown =
 document.getElementById("countdown");
 
-const timer = setInterval(()=>{
+const gatePage =
+document.getElementById("gatePage");
+
+const timer = setInterval(() => {
 
   i++;
 
@@ -198,18 +205,15 @@ const timer = setInterval(()=>{
 
     countdown.style.opacity = "0";
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
       countdown.style.display = "none";
-
-      document.getElementById("gatePage")
-        .style.display = "flex";
+      gatePage.style.display = "flex";
 
     },1000);
   }
 
 },1000);
-
 
 document
 .getElementById("enterBtn")
@@ -232,7 +236,6 @@ document
   },2000);
 
 });
-
 </script>
 
 </body>
