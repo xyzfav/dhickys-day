@@ -502,6 +502,8 @@ font-style:italic;
 position:relative;
 width:280px;
 margin:50px auto;
+display:flex;
+justify-content:center;
 }
 
 .candle{
@@ -513,17 +515,45 @@ position:relative;
 }
 
 .candle{
-width:12px;
-height:65px;
-background:#fff;
-border-radius:10px;
 position:absolute;
-top:-20px;
+width:14px;
+height:60px;
+background:white;
+border-radius:10px;
 left:50%;
+top:45px;
 transform:translateX(-50%);
-z-index:5;
+z-index:10;
 transition:1s;
 }
+
+.candle::before{
+content:"";
+position:absolute;
+width:18px;
+height:24px;
+background:gold;
+border-radius:50% 50% 50% 50%;
+top:-18px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:
+0 0 15px gold,
+0 0 30px orange;
+animation:flicker .8s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:translateX(-50%) scale(1);
+opacity:1;
+}
+to{
+transform:translateX(-50%) scale(1.15);
+opacity:.8;
+}
+}
+
 .cake-img{
 width:100%;
 display:block;
@@ -539,7 +569,14 @@ max-width:320px;
 margin-left:auto;
 margin-right:auto;
 font-style:italic;
-animation:fadeWish 1.5s;
+opacity:0;
+transform:translateY(30px);
+transition:1.5s;
+}
+
+#wishMessage.show{
+opacity:1;
+transform:translateY(0);
 }
 
 @keyframes fadeWish{
@@ -1089,17 +1126,18 @@ document
 .classList.add("active");
 
 }
-function blowCandle(){
 
-document.getElementById("candle")
-.style.opacity = "0";
+  function blowCandle(){
 
-if(candle){
-  candle.style.opacity = "0";
-}
-document.getElementById("wishMessage")
-.innerHTML =
-"Selamat ulang tahun, sayangku 🖤<br><br>Thank you for being part of my universe.";
+const msg =
+document.getElementById("wishMessage");
+
+msg.innerHTML =
+"🖤 Selamat ulang tahun, sayangku🖤<br><br>Thank you for being part of my universe.";
+
+setTimeout(()=>{
+  msg.classList.add("show");
+},200);
 
 }
 </script>
