@@ -1036,88 +1036,94 @@ let n = 3;
 let sparkleStarted = false;
 
 const countdown =
-document.getElementById("countdown");
+countdown.innerHTML = "Tap To Start ✨";
 
-document.body.addEventListener(
+countdown.addEventListener(
   "click",
-  function enableAudio() {
-    document.getElementById("tickSound").play();
-    document.getElementById("tickSound").pause();
-    document.getElementById("tickSound").currentTime = 0;
+  function(){
 
-    document.getElementById("paperSound").play();
-    document.getElementById("paperSound").pause();
-    document.getElementById("paperSound").currentTime = 0;
+    const tick = document.getElementById("tickSound");
+    const paper = document.getElementById("paperSound");
+    const sparkle = document.getElementById("sparkleSound");
 
-    document.getElementById("sparkleSound").play();
-    document.getElementById("sparkleSound").pause();
-    document.getElementById("sparkleSound").currentTime = 0;
+    // unlock audio iPhone
+    tick.play().then(()=>{
+      tick.pause();
+      tick.currentTime = 0;
+
+      paper.play();
+      paper.pause();
+      paper.currentTime = 0;
+
+      sparkle.play();
+      sparkle.pause();
+      sparkle.currentTime = 0;
+
+      // mulai countdown
+      n = 4;
+
+      const timer = setInterval(()=>{
+
+        n--;
+
+        if(n > 0){
+
+          tick.currentTime = 0;
+          tick.play().catch(()=>{});
+
+          countdown.innerHTML = n;
+
+        } else {
+
+          clearInterval(timer);
+
+          countdown.innerHTML = "✦";
+
+          sparkle.currentTime = 0;
+          sparkle.play().catch(()=>{});
+
+          setTimeout(()=>{
+
+            countdown.style.display = "none";
+
+            const intro =
+            document.getElementById("introPage");
+
+            intro.classList.add("active");
+
+            setTimeout(()=>{
+              intro.style.opacity = "1";
+            },100);
+
+            setTimeout(()=>{
+
+              intro.style.opacity = "0";
+
+              setTimeout(()=>{
+
+                intro.classList.remove("active");
+
+                document
+                .getElementById("newspaper")
+                .classList.add("active");
+
+                paper.currentTime = 0;
+                paper.play().catch(()=>{});
+
+              },1500);
+
+            },2500);
+
+          },1000);
+        }
+
+      },1000);
+
+    });
+
   },
-  { once: true }
+  { once:true }
 );
-
-alert("✨ Tap To Start ✨");
-
-const timer =
-setInterval(()=>{
-n--;
-
-if(n > 0){
-
-  document.getElementById("tickSound")
-  .play()
-  .catch(()=>{});
-
-  countdown.innerHTML = n;
-
-} else {
-
-clearInterval(timer);
-
-countdown.innerHTML = "✦";
-
-document.getElementById("sparkleSound")
-.play()
-.catch(()=>{});
-
-setTimeout(()=>{
-
-countdown.style.display = "none";
-
-const intro =
-document.getElementById("introPage");
-
-intro.classList.add("active");
-
-setTimeout(()=>{
-intro.style.opacity = "1";
-},100);
-
-setTimeout(()=>{
-
-intro.style.opacity = "0";
-
-setTimeout(()=>{
-
-intro.classList.remove("active");
-
-document
-.getElementById("newspaper")
-.classList.add("active");
-
-document.getElementById("paperSound")
-.play()
-.catch(()=>{});
-
-},1500);
-
-},2500);
-
-},1000);
-
-}
-
-},1000);
 
 
 
