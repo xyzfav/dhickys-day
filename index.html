@@ -50,7 +50,7 @@ display:flex;
 }
 @media(max-width:600px){
   #countdown{
-    font-size:28px;
+    font-size:30px;
     letter-spacing:3px;
   }
 }
@@ -1042,60 +1042,76 @@ style="width:100%; border-radius:20px;">
 
 <script>
 
-let n = 3;
-countdown.innerHTML = n;
+const countdown = document.getElementById("countdown");
 
-const timer = setInterval(() => {
+countdown.innerHTML = "✨ Tap To Start ✨";
+countdown.style.fontSize = "30px";
 
-  tick.currentTime = 0;
-  tick.play().catch(()=>{});
+countdown.addEventListener("click", function(){
 
-  n--;
+  const tick = document.getElementById("tickSound");
+  const paper = document.getElementById("paperSound");
+  const sparkle = document.getElementById("sparkleSound");
 
-  if(n > 0){
-    countdown.innerHTML = n;
-  } else {
+  countdown.style.fontSize = "130px";
 
-    clearInterval(timer);
+  let n = 3;
+  countdown.innerHTML = n;
 
-    countdown.innerHTML = "✦";
+  const timer = setInterval(() => {
 
-    sparkle.currentTime = 0;
-    sparkle.play().catch(()=>{});
+    tick.currentTime = 0;
+    tick.play().catch(()=>{});
 
-    setTimeout(() => {
-      countdown.style.display = "none";
+    n--;
 
-      const intro =
-      document.getElementById("introPage");
+    if(n > 0){
+      countdown.innerHTML = n;
+    } else {
 
-      intro.classList.add("active");
+      clearInterval(timer);
 
-      setTimeout(()=>{
-        intro.style.opacity = "1";
-      },100);
+      countdown.innerHTML = "✦";
 
-      setTimeout(()=>{
-        intro.style.opacity = "0";
+      sparkle.currentTime = 0;
+      sparkle.play().catch(()=>{});
+
+      setTimeout(() => {
+
+        countdown.style.display = "none";
+
+        const intro =
+        document.getElementById("introPage");
+
+        intro.classList.add("active");
 
         setTimeout(()=>{
-          intro.classList.remove("active");
+          intro.style.opacity = "1";
+        },100);
 
-          document
-          .getElementById("newspaper")
-          .classList.add("active");
+        setTimeout(()=>{
 
-          paper.currentTime = 0;
-          paper.play().catch(()=>{});
+          intro.style.opacity = "0";
 
-        },1500);
+          setTimeout(()=>{
 
-      },2500);
+            intro.classList.remove("active");
 
-    },1000);
-  }
+            document
+            .getElementById("newspaper")
+            .classList.add("active");
 
-},1000);
+            paper.currentTime = 0;
+            paper.play().catch(()=>{});
+
+          },1500);
+
+        },2500);
+
+      },1000);
+    }
+
+  },1000);
 
 }, { once:true });
 
