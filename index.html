@@ -414,11 +414,16 @@ opacity:0;
 }
 
 #starPage{
-background:#050816;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-overflow:hidden;
+  background:linear-gradient(
+    to bottom,
+    #060612,
+    #0b0b1f,
+    #050612
+  );
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  overflow:hidden;
 }
 
 .night-sky{
@@ -498,6 +503,36 @@ font-size:22px;
 font-style:italic;
 }
 
+.star-name span{
+  animation:blinkStar 2s infinite;
+}
+
+.star-name span:nth-child(1){
+  animation-delay:0s;
+}
+
+.star-name span:nth-child(3){
+  animation-delay:.5s;
+}
+
+.star-name span:nth-child(5){
+  animation-delay:1s;
+}
+
+@keyframes blinkStar{
+  0%,100%{
+    opacity:1;
+    text-shadow:
+      0 0 10px white,
+      0 0 20px white,
+      0 0 40px white;
+  }
+
+  50%{
+    opacity:.3;
+    text-shadow:none;
+  }
+}
 .birthday-cake{
 position:relative;
 width:280px;
@@ -916,9 +951,13 @@ See The Stars ✨
   <div class="night-sky">
 
 <h1 class="star-name">
-  D ✦ T ✦ F
+  <span>D</span>
+  <span>✦</span>
+  <span>T</span>
+  <span>✦</span>
+  <span>F</span>
 </h1>
-
+    
 <p class="star-text">
   Some souls are written in the stars ✨
 </p>
