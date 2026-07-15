@@ -728,25 +728,27 @@ transform:scale(.96);
 }
 
 .movie-text{
-  font-size:28px;
-  line-height:1.8;
-  margin-bottom:40px;
+  height:300px;
+  overflow:hidden;
   text-align:center;
+  font-size:20px;
+  line-height:2;
+  margin-top:30px;
+  margin-bottom:40px;
 }
 
 .movie-text span{
   display:block;
-  animation:movieText 22s ease forwards;
+  padding-top:320px;
+  animation:movieText 22s linear forwards;
 }
 
 @keyframes movieText{
   from{
-    opacity:0;
-    transform:translateY(60px);
+    transform:translateY(0);
   }
   to{
-    opacity:1;
-    transform:translateY(0);
+    transform:translateY(-320px);
   }
 }
 </style>
@@ -1395,7 +1397,7 @@ document
 
       <p style="font-size:22px;line-height:1.7;margin-top:20px;">
         There's still something waiting for you...
-        <br><br>
+        <br>
         But you'll only get it if you come and chat me first 🖤
       </p>
 
@@ -1412,7 +1414,7 @@ document
 
       <button class="replay-btn"
       onclick="location.reload()">
-        🌼 Open This Little Gift Again 🌼
+        Open This Little Gift Again
       </button>
 
     </div>
