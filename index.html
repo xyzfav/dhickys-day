@@ -35,15 +35,22 @@ display:flex;
 
 
 #countdown{
-background:#111;
-color:#f3e8d2;
-justify-content:center;
-align-items:center;
-font-family:'Cinzel',serif;
-font-size:130px;
-letter-spacing:20px;
+  background:#111;
+  color:#f3e8d2;
+  justify-content:center;
+  align-items:center;
+  font-family:'Cinzel',serif;
+  font-size:45px;
+  letter-spacing:5px;
+  text-align:center;
+  padding:20px;
 }
-
+@media(max-width:600px){
+  #countdown{
+    font-size:32px;
+    letter-spacing:3px;
+  }
+}
 #introPage{
 justify-content:center;
 align-items:center;
