@@ -1401,6 +1401,26 @@ to{
 
 }
 
+.gift-open{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100%;
+animation:fadeGift .8s;
+}
+
+.gift-box-png{
+width:220px;
+cursor:pointer;
+animation:giftFloat 2.5s ease-in-out infinite;
+transition:.3s;
+}
+
+.gift-box-png:hover{
+transform:scale(1.05);
+}
+
 .gift-menu{
     display:flex;
     flex-direction:column;
