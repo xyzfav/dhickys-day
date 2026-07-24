@@ -1768,81 +1768,70 @@ function updateDots(){
 
 function openGift(){
 
-  const lock =
-  document.querySelector(".lock-icon");
-
-  const box =
-  document.querySelector(".secret-box");
+  const secretPage = document.getElementById("secretPage");
+  const lock = document.querySelector(".lock-icon");
+  const box = document.querySelector(".secret-box");
 
   lock.innerHTML = "🔓";
 
   lock.animate([
-    {transform:"scale(1) rotate(0deg)"},
-    {transform:"scale(1.3) rotate(-12deg)"},
-    {transform:"scale(1.1) rotate(8deg)"},
-    {transform:"scale(1.25) rotate(0deg)"}
+    { transform:"scale(1) rotate(0deg)" },
+    { transform:"scale(1.3) rotate(-12deg)" },
+    { transform:"scale(1.1) rotate(8deg)" },
+    { transform:"scale(1.25) rotate(0deg)" }
   ],{
     duration:800,
     fill:"forwards"
   });
 
   setTimeout(()=>{
-
     box.style.transition="1s";
     box.style.opacity="0";
     box.style.transform="scale(.9)";
-
   },900);
 
   setTimeout(()=>{
 
-    document
-    .getElementById("secretPage")
-    .innerHTML=`
+    secretPage.innerHTML = `
+      <div style="
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        animation:fadeGift 1s;
+      ">
 
-document.getElementById("secretPage").classList.add("active");
-<div style="
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-width:100%;
-height:100%;
-animation:fadeGift 1.2s;
-">
+        <div id="giftBox" style="
+          font-size:95px;
+          cursor:pointer;
+          animation:giftFloat 2.5s ease-in-out infinite;
+        ">
+          🎁
+        </div>
 
-<div id="giftBox"
-style="
-font-size:95px;
-cursor:pointer;
-animation:giftFloat 2.5s ease-in-out infinite;
-">
-🎁
-</div>
+        <h2 style="
+          margin-top:25px;
+          font-family:Cinzel;
+          color:#f3e8d2;
+          letter-spacing:2px;
+        ">
+          Your Gift
+        </h2>
 
-<h2 style="
-margin-top:25px;
-font-family:Cinzel;
-color:#f3e8d2;
-letter-spacing:2px;
-">
-Your Gift
-</h2>
+        <p style="
+          margin-top:10px;
+          color:#d7c9ab;
+          font-size:20px;
+        ">
+          Tap the gift to open ✨
+        </p>
 
-<p style="
-margin-top:10px;
-color:#d7c9ab;
-font-size:20px;
-">
-Tap the gift to open ✨
-</p>
+      </div>
+    `;
 
-</div>
-`;
-
-    document
-    .getElementById("giftBox")
-    .onclick=openRealGift;
+    document.getElementById("giftBox").onclick = openRealGift;
 
   },1800);
 
@@ -1940,6 +1929,7 @@ Your surprise goes here.
 
     ❀ Friska ❀
   </span>
+</div>
 </div>
 </div>
 
