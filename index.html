@@ -811,35 +811,44 @@ transform:scale(.96);
 }
 
 #secretPage{
-display:#111;
+display:flex;
 justify-content:center;
 align-items:center;
-background:#111;
-color:#f3e8d2;
+background:
+radial-gradient(circle at top,#2a2216,#111 70%);
+position:relative;
+overflow:hidden;
 }
 
 .secret-box{
 
-background:#1b1b1b;
-
-padding:45px;
-
-border-radius:25px;
-
-width:90%;
+width:92%;
 max-width:420px;
+
+padding:45px 30px;
+
+background:rgba(28,28,28,.88);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,215,120,.18);
+
+border-radius:35px;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.5);
 
 text-align:center;
 
-box-shadow:0 20px 40px rgba(0,0,0,.45);
+color:#f3e8d2;
 
 }
 
 .lock-icon{
 
-font-size:70px;
+font-size:65px;
 
-margin-bottom:20px;
+margin-bottom:18px;
 
 transition:.5s;
 
@@ -849,55 +858,55 @@ transition:.5s;
 
 font-family:'Cinzel',serif;
 
-margin-bottom:15px;
+font-size:42px;
+
+margin-bottom:12px;
 
 }
 
-.secret-box input{
+.secret-box p{
 
-width:100%;
+color:#d8ccb5;
 
-padding:16px;
+font-size:20px;
 
-margin-top:25px;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-text-align:center;
-
-outline:none;
+margin-bottom:25px;
 
 }
 
 .pin-dots{
+
 display:flex;
+
 justify-content:center;
-gap:18px;
-margin:35px 0;
+
+gap:14px;
+
+margin-bottom:35px;
+
 }
 
 .pin-dots span{
 
-width:16px;
-height:16px;
+width:18px;
+
+height:18px;
 
 border-radius:50%;
 
-background:#444;
+border:2px solid #e7cf9a;
+
+background:transparent;
 
 transition:.3s;
 
 }
 
-.pin-dots span.active{
+.pin-dots span.fill{
 
-background:#f3e8d2;
+background:#f5d99c;
 
-box-shadow:0 0 15px #d8bf7c;
+box-shadow:0 0 15px rgba(255,220,130,.8);
 
 }
 
@@ -905,54 +914,119 @@ box-shadow:0 0 15px #d8bf7c;
 
 display:grid;
 
-grid-template-columns:repeat(3,80px);
-
-gap:18px;
+grid-template-columns:repeat(3,90px);
 
 justify-content:center;
 
-margin-top:20px;
+gap:18px;
 
 }
 
 .pin-grid button{
 
-width:80px;
+width:90px;
 
-height:80px;
-
-border:none;
+height:90px;
 
 border-radius:50%;
 
-background:#262626;
+border:none;
 
-color:#f3e8d2;
+cursor:pointer;
 
-font-size:28px;
+font-size:32px;
 
 font-family:'Cinzel',serif;
 
-cursor:pointer;
+background:#202020;
+
+color:#f7e7c2;
 
 transition:.25s;
 
 box-shadow:
-0 8px 18px rgba(0,0,0,.35);
-
-}
-
-.pin-grid button:hover{
-
-transform:scale(1.08);
-
-background:#333;
+0 8px 20px rgba(0,0,0,.45);
 
 }
 
 .pin-grid button:active{
 
-transform:scale(.94);
+transform:scale(.92);
+
+background:#3a3327;
+
+}
+
+#passwordError{
+
+display:none;
+
+margin-top:28px;
+
+color:#cf7272;
+
+font-size:18px;
+
+}
+
+.pin-dots{
+display:flex;
+justify-content:center;
+gap:18px;
+margin:30px 0;
+}
+
+.pin-dots span{
+width:18px;
+height:18px;
+border-radius:50%;
+border:2px solid #d8c79c;
+transition:.3s;
+}
+
+.pin-dots span.filled{
+background:#f3e8d2;
+box-shadow:0 0 12px rgba(255,255,255,.7);
+}
+
+.pin-grid{
+display:grid;
+grid-template-columns:repeat(3,70px);
+gap:16px;
+justify-content:center;
+margin-top:20px;
+}
+
+.pin-grid button{
+
+width:70px;
+height:70px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+color:#f3e8d2;
+
+font-size:28px;
+
+cursor:pointer;
+
+transition:.25s;
+
+backdrop-filter:blur(8px);
+
+}
+
+.pin-grid button:hover{
+
+background:#c9b48d;
+
+color:#111;
+
+transform:scale(1.08);
 
 }
 
@@ -962,7 +1036,7 @@ display:none;
 
 margin-top:25px;
 
-color:#c77b7b;
+color:#d89090;
 
 font-size:18px;
 
@@ -1720,38 +1794,93 @@ function clearPin(){
 
 }
 
-function checkPin(){
+let enteredPin = "";
 
-  if(pin === correctPin){
+function pressPin(num){
 
-    document.querySelector(".lock-icon").innerHTML = "🔓";
+  if(enteredPin.length >= 4) return;
+
+  enteredPin += num;
+
+  updateDots();
+
+  if(enteredPin.length === 4){
 
     setTimeout(()=>{
-      openGift();
-    },800);
 
-  }else{
+      if(enteredPin === "3107"){
 
-    pin = "";
+        document.querySelector(".lock-icon").innerHTML = "🔓";
 
-    updateDots();
+        setTimeout(()=>{
+          openGift();
+        },700);
 
-    document
-    .getElementById("passwordError")
-    .style.display = "block";
+      }else{
+
+        const box =
+        document.querySelector(".secret-box");
+
+        box.animate([
+          {transform:"translateX(-8px)"},
+          {transform:"translateX(8px)"},
+          {transform:"translateX(-8px)"},
+          {transform:"translateX(0)"}
+        ],{
+          duration:350
+        });
+
+        document.getElementById("passwordError").style.display="block";
+
+        enteredPin="";
+
+        updateDots();
+
+      }
+
+    },250);
 
   }
 
 }
+
+function deletePin(){
+
+  enteredPin =
+  enteredPin.slice(0,-1);
+
+  updateDots();
+
+}
+
+function updateDots(){
+
+  const dots =
+  document.querySelectorAll(".pin-dots span");
+
+  dots.forEach((dot,index)=>{
+
+    if(index < enteredPin.length){
+
+      dot.classList.add("filled");
+
+    }else{
+
+      dot.classList.remove("filled");
+
+    }
+
+  });
+
+}
+
 function openGift(){
 
-document
-.getElementById("secretPage")
-.classList.remove("active");
+  document
+  .getElementById("secretPage")
+  .classList.remove("active");
 
-document
-.getElementById("giftMenu")
-.classList.add("active");
+  alert("Gift unlocked ❤️");
 
 }
 </script>
@@ -1760,17 +1889,15 @@ document
 
 <div class="secret-box">
 
-<div class="lock-icon" id="lockIcon">
-🔒
-</div>
+<div class="lock-icon">🔒</div>
 
 <h1>Secret Gift</h1>
 
 <p>
-Only Dhicky can unlock this gift ✨
+Only Dhicky can unlock this gift.
 </p>
 
-<div id="pinDots" class="pin-dots">
+<div class="pin-dots">
 <span></span>
 <span></span>
 <span></span>
@@ -1779,21 +1906,23 @@ Only Dhicky can unlock this gift ✨
 
 <div class="pin-grid">
 
-<button onclick="pressPin(1)">1</button>
-<button onclick="pressPin(2)">2</button>
-<button onclick="pressPin(3)">3</button>
+<button onclick="pressPin('1')">1</button>
+<button onclick="pressPin('2')">2</button>
+<button onclick="pressPin('3')">3</button>
 
-<button onclick="pressPin(4)">4</button>
-<button onclick="pressPin(5)">5</button>
-<button onclick="pressPin(6)">6</button>
+<button onclick="pressPin('4')">4</button>
+<button onclick="pressPin('5')">5</button>
+<button onclick="pressPin('6')">6</button>
 
-<button onclick="pressPin(7)">7</button>
-<button onclick="pressPin(8)">8</button>
-<button onclick="pressPin(9)">9</button>
+<button onclick="pressPin('7')">7</button>
+<button onclick="pressPin('8')">8</button>
+<button onclick="pressPin('9')">9</button>
 
-<button onclick="clearPin()">⌫</button>
-<button onclick="pressPin(0)">0</button>
-<button onclick="checkPin()">✓</button>
+<div></div>
+
+<button onclick="pressPin('0')">0</button>
+
+<button onclick="deletePin()">⌫</button>
 
 </div>
 
@@ -1804,7 +1933,6 @@ Wrong Password 🤍
 </div>
 
 </div>
-
 <div id="endingPage" class="page">
 
   <div class="ending-card">
