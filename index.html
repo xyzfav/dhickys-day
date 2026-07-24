@@ -873,6 +873,100 @@ outline:none;
 
 }
 
+.pin-dots{
+display:flex;
+justify-content:center;
+gap:18px;
+margin:35px 0;
+}
+
+.pin-dots span{
+
+width:16px;
+height:16px;
+
+border-radius:50%;
+
+background:#444;
+
+transition:.3s;
+
+}
+
+.pin-dots span.active{
+
+background:#f3e8d2;
+
+box-shadow:0 0 15px #d8bf7c;
+
+}
+
+.pin-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,80px);
+
+gap:18px;
+
+justify-content:center;
+
+margin-top:20px;
+
+}
+
+.pin-grid button{
+
+width:80px;
+
+height:80px;
+
+border:none;
+
+border-radius:50%;
+
+background:#262626;
+
+color:#f3e8d2;
+
+font-size:28px;
+
+font-family:'Cinzel',serif;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 8px 18px rgba(0,0,0,.35);
+
+}
+
+.pin-grid button:hover{
+
+transform:scale(1.08);
+
+background:#333;
+
+}
+
+.pin-grid button:active{
+
+transform:scale(.94);
+
+}
+
+#passwordError{
+
+display:none;
+
+margin-top:25px;
+
+color:#c77b7b;
+
+font-size:18px;
+
+}
 </style>
 </head>
 
@@ -1522,70 +1616,192 @@ document
 
 }
 
-function checkPassword(){
+let pin = "";
 
-const pass =
-document.getElementById("giftPassword").value;
+const correctPin = "3107";
 
-if(pass === "3107"){
+function pressPin(num){
 
-document.querySelector(".lock-icon").innerHTML="🔓";
+if(pin.length>=4) return;
+
+pin += num;
+
+updateDots();
+
+}
+
+function updateDots(){
+
+const dots =
+document.querySelectorAll("#pinDots span");
+
+dots.forEach((dot,index)=>{
+
+if(index<pin.length){
+
+dot.classList.add("active");
+
+}else{
+
+dot.classList.remove("active");
+
+}
+
+});
+
+}
+
+function clearPin(){
+
+pin = pin.slice(0,-1);
+
+updateDots();
+
+}
+
+function checkPin(){
+
+if(pin===correctPin){
+
+document
+.getElementById("lockIcon")
+.innerHTML="🔓";
 
 setTimeout(()=>{
 
 openGift();
 
-},800);
+},700);
 
 }else{
 
-const err =
-document.getElementById("passwordError");
+pin="";
 
-err.style.display="block";
+updateDots();
+
+document
+.getElementById("passwordError")
+.style.display="block";
+
+setTimeout(()=>{
+
+document
+.getElementById("passwordError")
+.style.display="none";
+
+},1500);
 
 }
 
 }
 
+function updateDots(){
+
+  const dots =
+  document.querySelectorAll("#pinDots span");
+
+  dots.forEach((dot,index)=>{
+
+    if(index < pin.length){
+      dot.classList.add("active");
+    }else{
+      dot.classList.remove("active");
+    }
+
+  });
+
+}
+
+function clearPin(){
+
+  pin = pin.slice(0,-1);
+
+  updateDots();
+
+}
+
+function checkPin(){
+
+  if(pin === correctPin){
+
+    document.querySelector(".lock-icon").innerHTML = "🔓";
+
+    setTimeout(()=>{
+      openGift();
+    },800);
+
+  }else{
+
+    pin = "";
+
+    updateDots();
+
+    document
+    .getElementById("passwordError")
+    .style.display = "block";
+
+  }
+
+}
 function openGift(){
 
-alert("Gift berhasil dibuka ❤️");
+document
+.getElementById("secretPage")
+.classList.remove("active");
+
+document
+.getElementById("giftMenu")
+.classList.add("active");
 
 }
 </script>
 
 <div id="secretPage" class="page">
 
-  <div class="secret-box">
+<div class="secret-box">
 
-    <div class="lock-icon">🔒</div>
+<div class="lock-icon" id="lockIcon">
+🔒
+</div>
 
-    <h1>Secret Gift</h1>
+<h1>Secret Gift</h1>
 
-    <p>
-      Only Dhicky can open this gift.
-    </p>
+<p>
+Only Dhicky can unlock this gift ✨
+</p>
 
-    <input
-      id="giftPassword"
-      type="password"
-      placeholder="Enter Password">
+<div id="pinDots" class="pin-dots">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-    <button class="btn" onclick="checkPassword()">
-      Unlock
-    </button>
+<div class="pin-grid">
 
-    <p
-    id="passwordError"
-    style="
-      color:#b84b4b;
-      margin-top:15px;
-      display:none;">
-      Wrong Password 🤍
-    </p>
+<button onclick="pressPin(1)">1</button>
+<button onclick="pressPin(2)">2</button>
+<button onclick="pressPin(3)">3</button>
 
-  </div>
+<button onclick="pressPin(4)">4</button>
+<button onclick="pressPin(5)">5</button>
+<button onclick="pressPin(6)">6</button>
+
+<button onclick="pressPin(7)">7</button>
+<button onclick="pressPin(8)">8</button>
+<button onclick="pressPin(9)">9</button>
+
+<button onclick="clearPin()">⌫</button>
+<button onclick="pressPin(0)">0</button>
+<button onclick="checkPin()">✓</button>
+
+</div>
+
+<p id="passwordError">
+Wrong Password 🤍
+</p>
+
+</div>
 
 </div>
 
