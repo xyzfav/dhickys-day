@@ -644,33 +644,30 @@ function openGift(){
 
 secretPage.innerHTML = `
 
-<div class="gift-menu">
+<div class="gift-open">
 
-    <h1>Your Gifts 🎁</h1>
+<img
+src="giftbox.PNG"
+id="giftBox"
+class="gift-box-png">
 
-    <p>Choose one to open</p>
-
-    <button class="gift-btn" onclick="openVoucher()">
-        🎟 Voucher Collection
-    </button>
-
-    <button class="gift-btn" onclick="openScrapbook()">
-        📖 Scrapbook
-    </button>
-
-    <button class="gift-btn" onclick="openInvitation()">
-        💌 Invitation
-    </button>
+<h2 style="
+margin-top:25px;
+font-family:Cinzel;
+color:#f3e8d2;
+">
+Tap to Open
+</h2>
 
 </div>
 
 `;
 
-        document
-        .getElementById("giftBox")
-        .onclick = openRealGift;
+document
+.getElementById("giftBox")
+.onclick = openGiftMenu;
 
-    },1800);
+},1800);
 
 }
 
@@ -783,6 +780,36 @@ Your surprise goes here.
 
 }
 
+function openGiftMenu(){
+
+document.getElementById("secretPage").innerHTML = `
+
+<div class="gift-menu">
+
+<h1>Your Gifts 🎁</h1>
+
+<p>Choose one to open</p>
+
+<button class="gift-btn"
+onclick="openVoucher()">
+🎟 Voucher Collection
+</button>
+
+<button class="gift-btn"
+onclick="openScrapbook()">
+📖 Scrapbook
+</button>
+
+<button class="gift-btn"
+onclick="openInvitation()">
+💌 Invitation
+</button>
+
+</div>
+
+`;
+
+}
 function openVoucher(){
 
 document.getElementById("secretPage").innerHTML=`
