@@ -811,7 +811,6 @@ transform:scale(.96);
 }
 
 #secretPage{
-display:flex;
 justify-content:center;
 align-items:center;
 background:
@@ -1801,6 +1800,7 @@ function openGift(){
     .getElementById("secretPage")
     .innerHTML=`
 
+document.getElementById("secretPage").classList.add("active");
 <div style="
 display:flex;
 flex-direction:column;
@@ -1940,7 +1940,6 @@ Your surprise goes here.
 
     ❀ Friska ❀
   </span>
-</div>
 </div>
 </div>
 
