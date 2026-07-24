@@ -872,7 +872,7 @@ Close
 
 function backToGift(){
 
-openGift();
+openGiftMenu();
 
 }
 /*==================================================
