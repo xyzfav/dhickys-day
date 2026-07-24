@@ -794,17 +794,17 @@ document.getElementById("secretPage").innerHTML=`
 <p>Choose one voucher</p>
 
 <button class="gift-btn"
-onclick="showVoucher('voucher 1.PNG')">
+onclick="showVoucher('voucher1.PNG')">
 🎟 Voucher I
 </button>
 
 <button class="gift-btn"
-onclick="showVoucher('voucher 2.PNG')">
+onclick="showVoucher('voucher2.PNG')">
 🎟 Voucher II
 </button>
 
 <button class="gift-btn"
-onclick="showVoucher('voucher 3.PNG')">
+onclick="showVoucher('voucher3.PNG')">
 🎟 Voucher III
 </button>
 
