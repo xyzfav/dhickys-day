@@ -810,57 +810,88 @@ onclick="openInvitation()">
 `;
 
 }
+
+/*==================================================
+    VOUCHER DATA
+==================================================*/
+
+const vouchers = [
+
+{
+file:"voucher1.PNG",
+title:"One Day Fun Date 💙"
+},
+
+{
+file:"voucher2.PNG",
+title:"Unlimited Hug Pass 🤍"
+},
+
+{
+file:"voucher3.PNG",
+title:"Food Treat 🍽"
+}
+
+];
+
+let voucherIndex = 0;
+
 function openVoucher(){
 
-document.getElementById("secretPage").innerHTML=`
+voucherIndex = 0;
+
+renderVoucher();
+
+}
+
+function renderVoucher(){
+
+const voucher = vouchers[voucherIndex];
+
+document.getElementById("secretPage").innerHTML = `
 
 <div class="gift-menu">
 
 <h1>Voucher Collection</h1>
 
-<p>Choose one voucher</p>
+<p>${voucher.title}</p>
 
-<button class="gift-btn"
-onclick="showVoucher('voucher1.PNG')">
-🎟 Voucher I
+<img
+src="${voucher.file}"
+class="voucher-image"
+id="voucherImg">
+
+<div class="voucher-nav">
+
+<button
+class="gift-btn small-btn"
+onclick="prevVoucher()">
+
+◀ Previous
+
 </button>
 
-<button class="gift-btn"
-onclick="showVoucher('voucher2.PNG')">
-🎟 Voucher II
-</button>
+<div class="voucher-count">
 
-<button class="gift-btn"
-onclick="showVoucher('voucher3.PNG')">
-🎟 Voucher III
-</button>
-
-<button class="gift-btn"
-onclick="backToGift()">
-⬅ Back
-</button>
+${voucherIndex+1} / ${vouchers.length}
 
 </div>
 
-`;
+<button
+class="gift-btn small-btn"
+onclick="nextVoucher()">
 
-}
+Next ▶
 
-function showVoucher(file){
+</button>
 
-document.getElementById("secretPage").innerHTML=`
-
-<div class="gift-menu">
-
-<img
-src="${file}"
-class="voucher-image">
+</div>
 
 <button
 class="gift-btn"
 onclick="openGiftMenu()">
 
-⬅ Back
+⬅ Back to Gifts
 
 </button>
 
@@ -870,9 +901,31 @@ onclick="openGiftMenu()">
 
 }
 
-function backToGift(){
+function nextVoucher(){
 
-openGiftMenu();
+voucherIndex++;
+
+if(voucherIndex >= vouchers.length){
+
+voucherIndex = 0;
+
+}
+
+renderVoucher();
+
+}
+
+function prevVoucher(){
+
+voucherIndex--;
+
+if(voucherIndex < 0){
+
+voucherIndex = vouchers.length-1;
+
+}
+
+renderVoucher();
 
 }
 /*==================================================
