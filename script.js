@@ -852,16 +852,16 @@ document.getElementById("secretPage").innerHTML=`
 
 <div class="gift-menu">
 
-<img src="${file}" style="
-width:90%;
-max-width:700px;
-border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,.4);
-">
+<img
+src="${file}"
+class="voucher-image">
 
-<button class="gift-btn"
-onclick="openVoucher()">
-Close
+<button
+class="gift-btn"
+onclick="openGiftMenu()">
+
+⬅ Back
+
 </button>
 
 </div>
