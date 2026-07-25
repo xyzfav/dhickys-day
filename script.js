@@ -1142,7 +1142,7 @@ The destination will remain a secret until we arrive together. ✨
 
 Ask your pretty girlfriend.
 
-She knows exactly what looks best on you. 🤎
+She knows exactly what looks best on you🤎
 
 </p>
 
@@ -1154,7 +1154,7 @@ She knows exactly what looks best on you. 🤎
 
 The only confirmation I need is seeing you show up.<br><br>
 
-I'll be waiting. 🌼
+I'll be waiting🌼
 
 </p>
 
