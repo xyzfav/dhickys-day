@@ -1482,18 +1482,22 @@ padding:30px;
 }
 
 .voucher-image{
+width:96vw;
+max-width:900px;
 
-width:90%;
+height:auto;
 
-max-width:700px;
+display:block;
 
 border-radius:18px;
 
-box-shadow:
-0 20px 50px rgba(0,0,0,.45);
+box-shadow:0 20px 50px rgba(0,0,0,.45);
 
 animation:fadeGift .6s;
 
 margin-bottom:30px;
 
+touch-action:manipulation;
+
+cursor:zoom-in;
 }
