@@ -942,6 +942,92 @@ voucherIndex = vouchers.length-1;
 renderVoucher();
 
 }
+
+function openScrapbook(){
+
+    scrapbookIndex = 0;
+
+    renderScrapbook();
+
+}
+
+function renderScrapbook(){
+
+    document.getElementById("secretPage").innerHTML = `
+
+<div class="scrapbook-page">
+
+<img
+src="${scrapbooks[scrapbookIndex].file}"
+class="scrapbook-image">
+
+<div class="scrapbook-nav">
+
+<button
+class="scrapbook-btn"
+onclick="prevScrapbook()">
+
+◀ Prev
+
+</button>
+
+<div class="scrapbook-count">
+
+${scrapbookIndex+1}/${scrapbooks.length}
+
+</div>
+
+<button
+class="scrapbook-btn"
+onclick="nextScrapbook()">
+
+Next ▶
+
+</button>
+
+</div>
+
+<button
+class="gift-btn"
+style="margin-top:25px;"
+onclick="openGiftMenu()">
+
+⬅ Back to Gifts
+
+</button>
+
+</div>
+
+`;
+
+}
+function nextScrapbook(){
+
+    scrapbookIndex++;
+
+    if(scrapbookIndex >= scrapbooks.length){
+
+        scrapbookIndex = 0;
+
+    }
+
+    renderScrapbook();
+
+}
+
+function prevScrapbook(){
+
+    scrapbookIndex--;
+
+    if(scrapbookIndex < 0){
+
+        scrapbookIndex = scrapbooks.length-1;
+
+    }
+
+    renderScrapbook();
+
+}
 /*==================================================
     OPTIONAL
 ==================================================*/
