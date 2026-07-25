@@ -195,13 +195,17 @@ to{
 
 .title{
 
-    margin-top:20px;
+    margin-top:14px;
 
     text-align:center;
 
     font-family:'Cinzel',serif;
 
-    font-size:42px;
+    font-size:34px;
+
+    line-height:0.95;
+
+    letter-spacing:1px;
 
     font-weight:700;
 
