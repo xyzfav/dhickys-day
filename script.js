@@ -1212,7 +1212,7 @@ function openFinalScene(){
         </h2>
 
         <div class="final-heart">
-            🤍
+            ༺❀༻
         </div>
 
     </div>
