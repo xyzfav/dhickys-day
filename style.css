@@ -1238,15 +1238,10 @@ to{
 
 .secret-box h1{
 
-    font-family:'Cinzel',serif;
-
-    font-size:46px;
-
-    color:#f3e8d2;
-
+    font-size:34px;
+    line-height:1.2;
     letter-spacing:2px;
-
-    margin-bottom:12px;
+    white-space:nowrap;
 
 }
 
