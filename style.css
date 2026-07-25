@@ -295,58 +295,64 @@ to{
 
 @media(max-width:600px){
 
+#newspaper{
+
+    padding:12px;
+
+}
+
 .paper{
 
-    padding:24px;
+    width:96%;
+
+    padding:18px;
 
 }
 
 .date{
 
-    font-size:12px;
-    letter-spacing:2px;
+    font-size:11px;
+    letter-spacing:1px;
 
 }
 
 .title{
 
-    font-size:25px;
+    font-size:22px;
     line-height:1.1;
-    margin-top:10px;
+    white-space:nowrap;
 
 }
 
 .line{
 
-    margin:14px 0;
+    margin:12px 0;
 
 }
 
 .headline{
 
-    font-size:26px;
-    line-height:1.15;
+    font-size:24px;
 
 }
 
 .sub{
 
-    font-size:17px;
-    margin-top:6px;
+    font-size:16px;
+    margin-top:4px;
 
 }
 
 .cover{
 
-    margin-top:18px;
+    margin-top:16px;
 
 }
 
 .text{
 
-    margin-top:18px;
-    font-size:18px;
-    line-height:1.6;
+    margin-top:16px;
+    font-size:17px;
 
 }
 
