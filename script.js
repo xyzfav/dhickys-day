@@ -1028,6 +1028,123 @@ function prevScrapbook(){
     renderScrapbook();
 
 }
+
+function openInvitation(){
+
+document.getElementById("secretPage").innerHTML = `
+
+<div class="invitation-page">
+
+<h1>💌 Our Next Date</h1>
+
+<div class="invitation-card">
+
+<p class="invite-text">
+
+<b>Dear Dhicky,</b><br><br>
+
+You are officially invited to spend another beautiful day with your favorite girl.
+
+<br><br>
+
+I have planned a little surprise just for us, and I hope you'll join me for another day full of laughter, memories, and happiness.
+
+</p>
+
+<hr>
+
+<h2>📅 Date</h2>
+
+<p>
+Saturday,<br>
+1 August 2026
+</p>
+
+<hr>
+
+<h2>📍 Destination</h2>
+
+<p><b>Classified 🤍</b></p>
+
+<p>
+
+🏠 Your Home
+
+<br>
+
+⬇
+
+<br>
+
+🏡 Pick Up Your Pretty Girlfriend
+
+<br>
+
+⬇
+
+<br>
+
+🚗 Follow The Route
+
+<br>
+
+⬇
+
+<br>
+
+☺︎Secret Destination☺︎ 
+
+</p>
+
+<hr>
+
+<h2>👔 Dress Code</h2>
+
+<p>
+
+Please ask your prettiest girlfriend in the world. 🤍
+
+</p>
+
+<hr>
+
+<h2>💌 RSVP</h2>
+
+<p>
+
+All I need is you.<br>
+
+No gifts.<br>
+
+No flowers.<br>
+
+Just come with your smile.
+
+</p>
+
+<p style="margin-top:30px;">
+
+With Love,<br>
+
+<b>Friska ♡</b>
+
+</p>
+
+</div>
+
+<button
+class="gift-btn"
+onclick="openGiftMenu()">
+
+⬅ Back to Gifts
+
+</button>
+
+</div>
+
+`;
+
+}
 /*==================================================
     OPTIONAL
 ==================================================*/
