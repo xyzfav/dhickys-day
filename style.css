@@ -1624,3 +1624,97 @@ SCRAPBOOK
     cursor:pointer;
 
 }
+
+/*=========================
+INVITATION
+=========================*/
+
+.invitation-page{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:35px 20px;
+
+height:100dvh;
+
+overflow:auto;
+
+animation:fadeGift .5s;
+
+}
+
+.invitation-page h1{
+
+font-family:'Cinzel',serif;
+
+color:#f3e8d2;
+
+margin-bottom:25px;
+
+font-size:42px;
+
+text-align:center;
+
+}
+
+.invitation-card{
+
+width:100%;
+
+max-width:420px;
+
+background:#f8f1df;
+
+border-radius:22px;
+
+padding:30px;
+
+color:#2f2a24;
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+margin-bottom:30px;
+
+}
+
+.invitation-card h2{
+
+font-family:'Cinzel',serif;
+
+margin:20px 0 10px;
+
+font-size:22px;
+
+}
+
+.invitation-card p{
+
+font-size:20px;
+
+line-height:1.8;
+
+text-align:center;
+
+}
+
+.invitation-card hr{
+
+margin:20px 0;
+
+border:none;
+
+border-top:1px solid #d6c7a5;
+
+}
+
+.invite-text{
+
+text-align:left !important;
+
+font-style:italic;
+
+}
