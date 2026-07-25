@@ -1195,49 +1195,19 @@ function openFinalScene(){
 
     document.getElementById("endingPage").innerHTML = `
 
-<div
-style="
-display:flex;
-justify-content:center;
-align-items:center;
-width:100%;
-height:100%;
-background:#000;
-animation:fadeEnding 2s;
-">
+<div class="final-scene">
 
-<div
-style="
-text-align:center;
-color:#f3e8d2;
-font-family:Cinzel;
-">
+    <div class="final-content">
 
-<h1
-style="
-font-size:58px;
-margin-bottom:30px;
-">
+        <h1>See you...</h1>
 
-See you...
+        <p>
+            on August 1st.
+            <br><br>
+            🤍
+        </p>
 
-</h1>
-
-<p
-style="
-font-size:28px;
-line-height:2;
-">
-
-on August 1st.
-
-<br><br>
-
-🤍
-
-</p>
-
-</div>
+    </div>
 
 </div>
 
