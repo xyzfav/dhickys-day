@@ -1067,7 +1067,7 @@ to{
 
     line-height:1.7;
 
-    animation:movieText 40s linear infinite;
+    animation:movieText 40s linear forwards;
 
 }
 
