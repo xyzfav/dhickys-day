@@ -1482,7 +1482,7 @@ padding:30px;
 }
 
 .voucher-image{
-width:96vw;
+width:100%;
 max-width:900px;
 
 height:auto;
@@ -1500,4 +1500,44 @@ margin-bottom:30px;
 touch-action:manipulation;
 
 cursor:zoom-in;
+}
+
+.voucher-nav{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+gap:18px;
+
+margin:30px 0;
+
+flex-wrap:wrap;
+
+}
+
+.small-btn{
+
+width:150px;
+
+padding:14px;
+
+font-size:18px;
+
+margin:0;
+
+}
+
+.voucher-count{
+
+color:#f3e8d2;
+
+font-size:22px;
+
+font-family:'Cinzel',serif;
+
+min-width:70px;
+
+text-align:center;
+
 }
