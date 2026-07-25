@@ -836,6 +836,20 @@ title:"Food Treat 🍽"
 
 let voucherIndex = 0;
 
+const scrapbooks = [
+
+{ file:"scrapbook1.png" },
+{ file:"scrapbook2.png" },
+{ file:"scrapbook3.png" },
+{ file:"scrapbook4.png" },
+{ file:"scrapbook5.png" },
+{ file:"scrapbook6.png" },
+{ file:"scrapbook7.png" }
+
+];
+
+let scrapbookIndex = 0;
+
 function openVoucher(){
 
 voucherIndex = 0;
