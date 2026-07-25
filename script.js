@@ -1118,7 +1118,7 @@ Saturday<br>
 
 <p>
 
-<b>Classified 🤍</b>
+<b>Classified🧸</b>
 
 </p>
 
@@ -1139,8 +1139,9 @@ The destination will stay a secret until we arrive together ✨
 <h2>👔 Dress Code</h2>
 
 <p>
+Ask your pretty girlfriend.
 
-Ask your pretty girlfriend in the world. 🤍
+She knows exactly what looks best on you🤎
 
 </p>
 
@@ -1150,7 +1151,7 @@ Ask your pretty girlfriend in the world. 🤍
 
 <p>
 
-All I need is you.<br>
+The only confirmation I need is seeing you show up.<br>
 
 I'll be waiting. ♡
 
