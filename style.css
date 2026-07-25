@@ -295,39 +295,61 @@ to{
 
 @media(max-width:600px){
 
-.title{
+.paper{
 
-    font-size:24px;
-    line-height:1.2;
-    letter-spacing:1px;
-
-}
-
-.headline{
-
-    font-size:24px;
-    line-height:1.2;
-
-}
-
-.sub{
-
-    font-size:16px;
-
-}
-
-.text{
-
-    font-size:18px;
+    padding:24px;
 
 }
 
 .date{
 
-    font-size:11px;
+    font-size:12px;
     letter-spacing:2px;
 
 }
+
+.title{
+
+    font-size:25px;
+    line-height:1.1;
+    margin-top:10px;
+
+}
+
+.line{
+
+    margin:14px 0;
+
+}
+
+.headline{
+
+    font-size:26px;
+    line-height:1.15;
+
+}
+
+.sub{
+
+    font-size:17px;
+    margin-top:6px;
+
+}
+
+.cover{
+
+    margin-top:18px;
+
+}
+
+.text{
+
+    margin-top:18px;
+    font-size:18px;
+    line-height:1.6;
+
+}
+
 }
 
 /* =========================================================
