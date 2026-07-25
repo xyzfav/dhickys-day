@@ -1128,9 +1128,7 @@ class="route-image">
 
 <p style="font-style:italic">
 
-Follow the route...
-
-The destination will remain a secret until we arrive together. ✨
+Follow the route...The destination will remain a secret until we arrive together✨
 
 </p>
 
