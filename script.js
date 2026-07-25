@@ -1159,7 +1159,7 @@ I'll be waiting🌼
 
 <p style="margin-top:25px">
 
-With Love<br>
+Waiting for you<br>
 
 <b>Friska</b>
 
