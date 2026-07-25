@@ -486,7 +486,7 @@ function blowCandle(){
 
     wish.innerHTML = `
 
-    🖤 Selamat ulang tahun, sayangku 🖤
+    Selamat ulang tahun sayangku
 
     <br><br>
 
