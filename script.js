@@ -780,9 +780,13 @@ Your surprise goes here.
 
 }
 
+/*==================================================
+    GIFT MENU
+==================================================*/
+
 function openGiftMenu(){
 
-document.getElementById("secretPage").innerHTML = `
+document.getElementById("secretPage").innerHTML=`
 
 <div class="gift-menu">
 
@@ -792,17 +796,23 @@ document.getElementById("secretPage").innerHTML = `
 
 <button class="gift-btn"
 onclick="openVoucher()">
+
 🎟 Voucher Collection
+
 </button>
 
 <button class="gift-btn"
 onclick="openScrapbook()">
+
 📖 Scrapbook
+
 </button>
 
 <button class="gift-btn"
 onclick="openInvitation()">
+
 💌 Invitation
+
 </button>
 
 </div>
@@ -811,11 +821,13 @@ onclick="openInvitation()">
 
 }
 
+
+
 /*==================================================
-    VOUCHER DATA
+    DATA
 ==================================================*/
 
-const vouchers = [
+const vouchers=[
 
 {
 file:"voucher1.PNG",
@@ -834,25 +846,33 @@ title:"Food Treat 🍽"
 
 ];
 
-let voucherIndex = 0;
+let voucherIndex=0;
 
-const scrapbooks = [
 
-{ file:"scrapbook1.png" },
-{ file:"scrapbook2.png" },
-{ file:"scrapbook3.png" },
-{ file:"scrapbook4.png" },
-{ file:"scrapbook5.png" },
-{ file:"scrapbook6.png" },
-{ file:"scrapbook7.png" }
+
+const scrapbooks=[
+
+{file:"scrapbook1.png"},
+{file:"scrapbook2.png"},
+{file:"scrapbook3.png"},
+{file:"scrapbook4.png"},
+{file:"scrapbook5.png"},
+{file:"scrapbook6.png"},
+{file:"scrapbook7.png"}
 
 ];
 
-let scrapbookIndex = 0;
+let scrapbookIndex=0;
+
+
+
+/*==================================================
+    VOUCHER
+==================================================*/
 
 function openVoucher(){
 
-voucherIndex = 0;
+voucherIndex=0;
 
 renderVoucher();
 
@@ -860,20 +880,19 @@ renderVoucher();
 
 function renderVoucher(){
 
-const voucher = vouchers[voucherIndex];
+const v=vouchers[voucherIndex];
 
-document.getElementById("secretPage").innerHTML = `
+document.getElementById("secretPage").innerHTML=`
 
 <div class="gift-menu">
 
 <h1>Voucher Collection</h1>
 
-<p>${voucher.title}</p>
+<p>${v.title}</p>
 
 <img
-src="${voucher.file}"
-class="voucher-image"
-id="voucherImg">
+src="${v.file}"
+class="voucher-image">
 
 <div class="voucher-nav">
 
@@ -919,9 +938,9 @@ function nextVoucher(){
 
 voucherIndex++;
 
-if(voucherIndex >= vouchers.length){
+if(voucherIndex>=vouchers.length){
 
-voucherIndex = 0;
+voucherIndex=0;
 
 }
 
@@ -933,9 +952,9 @@ function prevVoucher(){
 
 voucherIndex--;
 
-if(voucherIndex < 0){
+if(voucherIndex<0){
 
-voucherIndex = vouchers.length-1;
+voucherIndex=vouchers.length-1;
 
 }
 
@@ -943,17 +962,21 @@ renderVoucher();
 
 }
 
+/*==================================================
+    SCRAPBOOK
+==================================================*/
+
 function openScrapbook(){
 
-    scrapbookIndex = 0;
+scrapbookIndex=0;
 
-    renderScrapbook();
+renderScrapbook();
 
 }
 
 function renderScrapbook(){
 
-    document.getElementById("secretPage").innerHTML = `
+document.getElementById("secretPage").innerHTML=`
 
 <div class="scrapbook-page">
 
@@ -973,7 +996,7 @@ onclick="prevScrapbook()">
 
 <div class="scrapbook-count">
 
-${scrapbookIndex+1}/${scrapbooks.length}
+${scrapbookIndex+1} / ${scrapbooks.length}
 
 </div>
 
@@ -989,7 +1012,7 @@ Next ▶
 
 <button
 class="gift-btn"
-style="margin-top:25px;"
+style="margin-top:30px"
 onclick="openGiftMenu()">
 
 ⬅ Back to Gifts
@@ -1001,37 +1024,44 @@ onclick="openGiftMenu()">
 `;
 
 }
+
 function nextScrapbook(){
 
-    scrapbookIndex++;
+scrapbookIndex++;
 
-    if(scrapbookIndex >= scrapbooks.length){
+if(scrapbookIndex>=scrapbooks.length){
 
-        scrapbookIndex = 0;
+scrapbookIndex=0;
 
-    }
+}
 
-    renderScrapbook();
+renderScrapbook();
 
 }
 
 function prevScrapbook(){
 
-    scrapbookIndex--;
+scrapbookIndex--;
 
-    if(scrapbookIndex < 0){
+if(scrapbookIndex<0){
 
-        scrapbookIndex = scrapbooks.length-1;
-
-    }
-
-    renderScrapbook();
+scrapbookIndex=scrapbooks.length-1;
 
 }
 
+renderScrapbook();
+
+}
+
+
+
+/*==================================================
+    INVITATION
+==================================================*/
+
 function openInvitation(){
 
-document.getElementById("secretPage").innerHTML = `
+document.getElementById("secretPage").innerHTML=`
 
 <div class="invitation-page">
 
@@ -1056,20 +1086,18 @@ I have planned a little surprise just for us, and I hope you'll join me for anot
 <h2>📅 Date</h2>
 
 <p>
-Saturday,<br>
+
+Saturday<br>
+
 1 August 2026
+
 </p>
 
 <hr>
 
 <h2>📍 Destination</h2>
 
-<p
-style="
-font-size:24px;
-margin-bottom:15px;
-text-align:center;
-">
+<p>
 
 <b>Classified 🤍</b>
 
@@ -1079,16 +1107,11 @@ text-align:center;
 src="route.PNG"
 class="route-image">
 
-<p
-style="
-margin-top:18px;
-font-style:italic;
-text-align:center;
-">
+<p style="font-style:italic">
 
-Follow the map...
+Follow the route...
 
-The destination will remain a secret until we arrive together. ✨
+The destination will stay a secret until we arrive together ✨
 
 </p>
 
@@ -1098,11 +1121,7 @@ The destination will remain a secret until we arrive together. ✨
 
 <p>
 
-Dress Code
-
-Ask your pretty girlfriend.
-
-She knows exactly what looks best on you🤍
+Ask your pretty girlfriend in the world. 🤍
 
 </p>
 
@@ -1112,15 +1131,15 @@ She knows exactly what looks best on you🤍
 
 <p>
 
-The only confirmation I need is seeing you show up.
+All I need is you.<br>
 
-I'll be waiting✶
+I'll be waiting. ♡
 
 </p>
 
-<p style="margin-top:30px;">
+<p style="margin-top:25px">
 
-With Love,<br>
+With Love<br>
 
 <b>Friska ♡</b>
 
@@ -1130,6 +1149,7 @@ With Love,<br>
 
 <button
 class="gift-btn"
+style="margin-top:30px"
 onclick="openGiftMenu()">
 
 ⬅ Back to Gifts
@@ -1141,19 +1161,19 @@ onclick="openGiftMenu()">
 `;
 
 }
+
+
+
 /*==================================================
     OPTIONAL
 ==================================================*/
 
-// Refresh scratch canvas saat ukuran layar berubah
 window.addEventListener("resize",()=>{
 
-    document
-    .querySelectorAll(".scratchCanvas")
-    .forEach(canvas=>{
+document.querySelectorAll(".scratchCanvas").forEach(canvas=>{
 
-        canvas.dataset.ready = "";
+canvas.dataset.ready="";
 
-    });
+});
 
 });
