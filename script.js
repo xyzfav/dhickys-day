@@ -1027,29 +1027,48 @@ onclick="openGiftMenu()">
 
 function nextScrapbook(){
 
-scrapbookIndex++;
+    const img =
+    document.querySelector(".scrapbook-image");
 
-if(scrapbookIndex>=scrapbooks.length){
+    img.classList.add("flip-next");
 
-scrapbookIndex=0;
+    setTimeout(()=>{
 
-}
+        scrapbookIndex++;
 
-renderScrapbook();
+        if(scrapbookIndex>=scrapbooks.length){
+
+            scrapbookIndex=0;
+
+        }
+
+        renderScrapbook();
+
+    },260);
 
 }
 
 function prevScrapbook(){
 
-scrapbookIndex--;
+    const img =
+    document.querySelector(".scrapbook-image");
 
-if(scrapbookIndex<0){
+    img.classList.add("flip-prev");
 
-scrapbookIndex=scrapbooks.length-1;
+    setTimeout(()=>{
 
-}
+        scrapbookIndex--;
 
-renderScrapbook();
+        if(scrapbookIndex<0){
+
+            scrapbookIndex=
+            scrapbooks.length-1;
+
+        }
+
+        renderScrapbook();
+
+    },260);
 
 }
 
