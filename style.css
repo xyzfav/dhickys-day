@@ -1719,46 +1719,18 @@ font-style:italic;
 
 }
 
-.route-box{
+.route-image{
 
-display:flex;
+width:100%;
 
-flex-direction:column;
+max-width:320px;
 
-align-items:center;
+display:block;
 
-margin:25px 0;
-
-}
-
-.route-step{
-
-width:250px;
-
-padding:18px;
-
-background:#fffaf1;
+margin:18px auto;
 
 border-radius:18px;
 
-box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-font-size:20px;
-
-text-align:center;
-
-}
-
-.route-line{
-
-width:3px;
-
-height:35px;
-
-background:#d6c08c;
-
-margin:6px 0;
-
-border-radius:50px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 
 }
