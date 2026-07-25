@@ -1153,7 +1153,7 @@ She knows exactly what looks best on you🤎
 
 The only confirmation I need is seeing you show up.<br>
 
-I'll be waiting. ♡
+I'll be waiting🌼
 
 </p>
 
@@ -1161,7 +1161,7 @@ I'll be waiting. ♡
 
 With Love<br>
 
-<b>Friska ♡</b>
+<b>Friska</b>
 
 </p>
 
