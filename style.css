@@ -1923,3 +1923,41 @@ to{
 }
 
 }
+
+/* =========================================================
+   MOBILE NEWSPAPER
+========================================================= */
+
+@media (max-width:600px){
+
+    .title{
+
+        font-size:31px;
+        white-space:nowrap;
+        letter-spacing:0;
+        line-height:1.1;
+
+    }
+
+    .headline{
+
+        font-size:27px;
+        white-space:nowrap;
+        letter-spacing:0;
+        line-height:1.1;
+
+    }
+
+    .sub{
+
+        font-size:18px;
+
+    }
+
+    .text{
+
+        font-size:20px;
+
+    }
+
+}
