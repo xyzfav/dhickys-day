@@ -1171,7 +1171,7 @@ class="gift-btn"
 style="margin-top:30px"
 onclick="openEnding()">
 
-⬅ Back to Gifts
+✨ Finish Journey ✨
 
 </button>
 
