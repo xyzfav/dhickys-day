@@ -1813,3 +1813,113 @@ SCRAPBOOK PAGE FLIP
 }
 
 }
+
+/*=========================================
+FINAL SCENE
+=========================================*/
+
+.final-scene{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#ece3d0;
+
+    animation:
+    finalFadeIn 2s forwards,
+    finalFadeOut 2s 6s forwards;
+
+}
+
+.final-content{
+
+    text-align:center;
+
+    opacity:0;
+
+    animation:
+    contentFade 2s .5s forwards;
+
+}
+
+.final-content h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:58px;
+
+    color:#6d4d34;
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+
+}
+
+.final-content p{
+
+    font-size:28px;
+
+    line-height:2;
+
+    color:#7a5a42;
+
+    font-style:italic;
+
+}
+
+@keyframes finalFadeIn{
+
+from{
+
+    opacity:0;
+
+}
+
+to{
+
+    opacity:1;
+
+}
+
+}
+
+@keyframes contentFade{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+@keyframes finalFadeOut{
+
+from{
+
+    opacity:1;
+
+}
+
+to{
+
+    opacity:0;
+
+}
+
+}
