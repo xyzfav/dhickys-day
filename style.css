@@ -1365,107 +1365,53 @@ to{
 
 
 /* =========================================================
-   GIFT
+   GIFT MENU
 ========================================================= */
 
-@keyframes fadeGift{
-
-from{
-
-    opacity:0;
-
-    transform:scale(.95);
-
-}
-
-to{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-
-}
-
-@keyframes giftFloat{
-
-0%,100%{
-
-    transform:translateY(0);
-
-}
-
-50%{
-
-    transform:translateY(-12px);
-
-}
-
-}
-
-.gift-open{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-width:100%;
-height:100dvh;
-animation:fadeGift .8s;
-}
-
-.gift-box-png{
-width:220px;
-cursor:pointer;
-animation:giftFloat 2.5s ease-in-out infinite;
-transition:.3s;
-}
-
-.gift-box-png:hover{
-transform:scale(1.05);
-}
-
 .gift-menu{
+    width:100%;
+    min-height:100dvh;
+
     display:flex;
     flex-direction:column;
     align-items:center;
 
-    width:100%;
-    min-height:100dvh;
-
-    padding:30px;
+    padding:40px 20px 60px;
 
     overflow-y:auto;
+    overflow-x:hidden;
 
-    justify-content:flex-start;
+    background:
+    radial-gradient(circle at center,#241c11 0%,#111 70%,#050505 100%);
 }
 
 .gift-menu h1{
     color:#f3e8d2;
     font-family:'Cinzel',serif;
-    font-size:48px;
-    margin-bottom:15px;
+    font-size:42px;
+    text-align:center;
+    margin-bottom:10px;
 }
 
-.gift-menu p{
+.gift-menu>p{
     color:#d7c9ab;
-    margin-bottom:40px;
     font-size:20px;
+    margin-bottom:35px;
+    text-align:center;
 }
 
 .gift-btn{
 
-    width:280px;
-
-    margin:12px;
+    width:min(320px,90%);
 
     padding:18px;
 
-    border:none;
+    margin:12px 0;
 
+    border:none;
     border-radius:18px;
 
-    background:#f6eddc;
+    background:#f7eedc;
 
     color:#2f2a24;
 
@@ -1473,102 +1419,113 @@ transform:scale(1.05);
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.25s;
 
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 
 }
 
 .gift-btn:hover{
 
-    transform:translateY(-5px);
-
-}
-
-.voucher-image{
-    width:100%;
-    max-width:700px;
-    height:auto;
-
-    margin:20px 0;
-
-    display:block;
-}
-
-.voucher-nav{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:16px;
-
-margin:25px 0;
-
-flex-wrap:nowrap;
+    transform:translateY(-4px);
 
 }
 
 .small-btn{
 
-width:140px !important;
+    width:140px;
 
-padding:12px 14px;
+    font-size:18px;
 
-margin:0 !important;
+    padding:12px 0;
 
-font-size:18px;
+}
 
-flex:none;
+
+
+/* =========================================================
+   VOUCHER
+========================================================= */
+
+.voucher-image{
+
+    width:min(900px,95%);
+
+    height:auto;
+
+    display:block;
+
+    margin:25px auto;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.voucher-nav{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:20px 0 30px;
 
 }
 
 .voucher-count{
 
-color:#f3e8d2;
+    color:#f3e8d2;
 
-font-size:22px;
+    font-family:'Cinzel',serif;
 
-font-family:'Cinzel',serif;
+    font-size:22px;
 
-min-width:70px;
+    min-width:70px;
 
-text-align:center;
+    text-align:center;
 
 }
 
-/*=========================
-SCRAPBOOK
-=========================*/
+
+
+/* =========================================================
+   SCRAPBOOK
+========================================================= */
 
 .scrapbook-page{
 
     width:100%;
-    height:100dvh;
+    min-height:100dvh;
 
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
 
-    padding:20px;
+    padding:40px 20px 60px;
 
-    animation:fadeGift .4s;
+    overflow-y:auto;
+
+    background:
+    radial-gradient(circle at center,#241c11 0%,#111 70%,#050505 100%);
 
 }
 
 .scrapbook-image{
 
-    width:100%;
-    height:78dvh;
+    width:min(1000px,95%);
 
-    object-fit:contain;
+    height:auto;
 
-    user-select:none;
+    border-radius:20px;
 
-    pointer-events:none;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
 
 }
 
@@ -1576,33 +1533,21 @@ SCRAPBOOK
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    gap:18px;
+    align-items:center;
 
-    margin-top:18px;
+    gap:20px;
 
-}
+    flex-wrap:wrap;
 
-.scrapbook-count{
-
-    color:#f3e8d2;
-
-    font-family:Cinzel;
-
-    font-size:22px;
-
-    min-width:60px;
-
-    text-align:center;
+    margin-top:30px;
 
 }
 
 .scrapbook-btn{
 
-    width:120px;
+    width:130px;
 
     padding:12px;
 
@@ -1610,120 +1555,129 @@ SCRAPBOOK
 
     border-radius:16px;
 
-    background:#f6eddc;
-
-    font-size:18px;
+    background:#f7eedc;
 
     cursor:pointer;
 
+    font-size:18px;
+
 }
 
-/*=========================
-INVITATION
-=========================*/
+.scrapbook-count{
+
+    color:#f3e8d2;
+
+    font-family:'Cinzel',serif;
+
+    font-size:22px;
+
+}
+
+
+
+/* =========================================================
+   INVITATION
+========================================================= */
 
 .invitation-page{
 
-display:flex;
+    width:100%;
 
-flex-direction:column;
+    min-height:100dvh;
 
-align-items:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-padding:35px 20px;
+    padding:40px 20px 60px;
 
-height:100dvh;
+    overflow-y:auto;
 
-overflow:auto;
-
-animation:fadeGift .5s;
+    background:
+    radial-gradient(circle at center,#241c11 0%,#111 70%,#050505 100%);
 
 }
 
 .invitation-page h1{
 
-font-family:'Cinzel',serif;
+    color:#f3e8d2;
 
-color:#f3e8d2;
+    font-family:'Cinzel',serif;
 
-margin-bottom:25px;
+    text-align:center;
 
-font-size:42px;
-
-text-align:center;
+    margin-bottom:25px;
 
 }
 
 .invitation-card{
 
-width:100%;
+    width:min(450px,95%);
 
-max-width:420px;
+    background:#f8f1df;
 
-background:#f8f1df;
+    color:#2f2a24;
 
-border-radius:22px;
+    border-radius:24px;
 
-padding:30px;
+    padding:35px;
 
-color:#2f2a24;
-
-box-shadow:0 20px 40px rgba(0,0,0,.35);
-
-margin-bottom:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
 
 }
 
 .invitation-card h2{
 
-font-family:'Cinzel',serif;
+    font-family:'Cinzel',serif;
 
-margin:20px 0 10px;
-
-font-size:22px;
+    margin:18px 0 12px;
 
 }
 
 .invitation-card p{
 
-font-size:20px;
+    text-align:center;
 
-line-height:1.8;
+    line-height:1.8;
 
-text-align:center;
-
-}
-
-.invitation-card hr{
-
-margin:20px 0;
-
-border:none;
-
-border-top:1px solid #d6c7a5;
+    font-size:20px;
 
 }
 
 .invite-text{
 
-text-align:left !important;
-
-font-style:italic;
+    text-align:left !important;
 
 }
 
 .route-image{
 
+    width:100%;
+
+    border-radius:18px;
+
+    display:block;
+
+    margin:18px auto;
+
+}
+
+@media(max-width:600px){
+
+.gift-menu h1{
+font-size:34px;
+}
+
+.voucher-image{
 width:100%;
+}
 
-max-width:320px;
+.scrapbook-image{
+width:100%;
+}
 
-display:block;
-
-margin:18px auto;
-
-border-radius:18px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+.invitation-card{
+padding:25px;
+}
 
 }
