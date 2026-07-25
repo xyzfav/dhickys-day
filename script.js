@@ -1064,92 +1064,31 @@ Saturday,<br>
 
 <h2>📍 Destination</h2>
 
-<p style="font-size:24px;margin-bottom:20px;">
-<b>Classified 🤍</b>
-</p>
-
-<div class="route-box">
-
-<div class="route-step">
-
-🏠
-<br>
-Your Home
-
-</div>
-
-<div class="route-line"></div>
-
-<div class="route-step">
-
-🏡
-<br>
-Pick Up Your Pretty Girlfriend
-
-</div>
-
-<div class="route-line"></div>
-
-<div class="route-step">
-
-🚗
-<br>
-Follow The Route...
-
-</div>
-
-<div class="route-line"></div>
-
-<div class="route-step">
-
-🪄
-<br>
-Secret Destination
-
-</div>
-
-</div>
-
-<p style="
-margin-top:20px;
-font-style:italic;
+<p
+style="
+font-size:24px;
+margin-bottom:15px;
+text-align:center;
 ">
 
-Destination will be revealed upon arrival.
-
-✨
+<b>Classified 🤍</b>
 
 </p>
 
-<p><b>Classified 🤍</b></p>
+<img
+src="route.PNG"
+class="route-image">
 
-<p>
+<p
+style="
+margin-top:18px;
+font-style:italic;
+text-align:center;
+">
 
-🏠 Your Home
+Follow the map...
 
-<br>
-
-⬇
-
-<br>
-
-🏡 Pick Up Your Pretty Girlfriend
-
-<br>
-
-⬇
-
-<br>
-
-🚗 Follow The Route
-
-<br>
-
-⬇
-
-<br>
-
-☺︎Secret Destination☺︎ 
+The destination will remain a secret until we arrive together. ✨
 
 </p>
 
@@ -1159,7 +1098,11 @@ Destination will be revealed upon arrival.
 
 <p>
 
-Please ask your prettiest girlfriend in the world. 🤍
+Dress Code
+
+Ask your pretty girlfriend.
+
+She knows exactly what looks best on you🤍
 
 </p>
 
@@ -1169,13 +1112,9 @@ Please ask your prettiest girlfriend in the world. 🤍
 
 <p>
 
-All I need is you.<br>
+The only confirmation I need is seeing you show up.
 
-No gifts.<br>
-
-No flowers.<br>
-
-Just come with your smile.
+I'll be waiting✶
 
 </p>
 
