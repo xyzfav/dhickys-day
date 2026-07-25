@@ -1169,7 +1169,7 @@ With Love<br>
 <button
 class="gift-btn"
 style="margin-top:30px"
-onclick="openGiftMenu()">
+onclick="openEnding()">
 
 ⬅ Back to Gifts
 
@@ -1181,8 +1181,69 @@ onclick="openGiftMenu()">
 
 }
 
+function openEnding(){
 
+    document.getElementById("secretPage").classList.remove("active");
 
+    document.getElementById("endingPage").classList.add("active");
+
+    setTimeout(openFinalScene,45000);
+
+}
+
+function openFinalScene(){
+
+    document.getElementById("endingPage").innerHTML = `
+
+<div
+style="
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+height:100%;
+background:#000;
+animation:fadeEnding 2s;
+">
+
+<div
+style="
+text-align:center;
+color:#f3e8d2;
+font-family:Cinzel;
+">
+
+<h1
+style="
+font-size:58px;
+margin-bottom:30px;
+">
+
+See you...
+
+</h1>
+
+<p
+style="
+font-size:28px;
+line-height:2;
+">
+
+on August 1st.
+
+<br><br>
+
+🤍
+
+</p>
+
+</div>
+
+</div>
+
+`;
+
+}
 /*==================================================
     OPTIONAL
 ==================================================*/
