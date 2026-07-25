@@ -1096,7 +1096,7 @@ You are officially invited to spend another beautiful day with your favorite gir
 
 <br><br>
 
-I have planned a little surprise just for us, and I hope you'll join me for another day full of laughter, memories, and happiness.
+I have planned a little surprise just for us, and I hope you'll join me for another day filled with laughter, beautiful memories, and happiness.
 
 </p>
 
@@ -1118,7 +1118,7 @@ Saturday<br>
 
 <p>
 
-<b>Classified🧸</b>
+<b>Classified 🧸</b>
 
 </p>
 
@@ -1130,7 +1130,7 @@ class="route-image">
 
 Follow the route...
 
-The destination will stay a secret until we arrive together ✨
+The destination will remain a secret until we arrive together. ✨
 
 </p>
 
@@ -1139,9 +1139,10 @@ The destination will stay a secret until we arrive together ✨
 <h2>👔 Dress Code</h2>
 
 <p>
+
 Ask your pretty girlfriend.
 
-She knows exactly what looks best on you🤎
+She knows exactly what looks best on you. 🤎
 
 </p>
 
@@ -1151,17 +1152,9 @@ She knows exactly what looks best on you🤎
 
 <p>
 
-The only confirmation I need is seeing you show up.<br>
+The only confirmation I need is seeing you show up.<br><br>
 
-I'll be waiting🌼
-
-</p>
-
-<p style="margin-top:25px">
-
-Waiting for you<br>
-
-<b>Friska</b>
+I'll be waiting. 🌼
 
 </p>
 
