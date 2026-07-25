@@ -1199,13 +1199,21 @@ function openFinalScene(){
 
     <div class="final-content">
 
-        <h1>See you...</h1>
-
-        <p>
-            on August 1st.
-            <br><br>
-            🤍
+        <p class="final-small">
+            Until then...
         </p>
+
+        <h1 class="final-title">
+            See you on
+        </h1>
+
+        <h2 class="final-date">
+            AUGUST 1st.
+        </h2>
+
+        <div class="final-heart">
+            🤍
+        </div>
 
     </div>
 
