@@ -1064,6 +1064,63 @@ Saturday,<br>
 
 <h2>📍 Destination</h2>
 
+<p style="font-size:24px;margin-bottom:20px;">
+<b>Classified 🤍</b>
+</p>
+
+<div class="route-box">
+
+<div class="route-step">
+
+🏠
+<br>
+Your Home
+
+</div>
+
+<div class="route-line"></div>
+
+<div class="route-step">
+
+🏡
+<br>
+Pick Up Your Pretty Girlfriend
+
+</div>
+
+<div class="route-line"></div>
+
+<div class="route-step">
+
+🚗
+<br>
+Follow The Route...
+
+</div>
+
+<div class="route-line"></div>
+
+<div class="route-step">
+
+🪄
+<br>
+Secret Destination
+
+</div>
+
+</div>
+
+<p style="
+margin-top:20px;
+font-style:italic;
+">
+
+Destination will be revealed upon arrival.
+
+✨
+
+</p>
+
 <p><b>Classified 🤍</b></p>
 
 <p>
