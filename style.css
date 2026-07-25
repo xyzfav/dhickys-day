@@ -1859,7 +1859,29 @@ FINAL SCENE
     margin-bottom:30px;
 
 }
+.final-date{
 
+    font-family:'Cinzel',serif;
+
+    font-size:46px;
+
+    color:#6d4d34;
+
+    letter-spacing:4px;
+
+    margin-top:-10px;
+
+    margin-bottom:28px;
+
+}
+
+.final-heart{
+
+    font-size:34px;
+
+    color:#8b6b52;
+
+}
 .final-content p{
 
     font-size:28px;
