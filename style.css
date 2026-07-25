@@ -1154,6 +1154,8 @@ to{
 
     inset:0;
 
+    pointer-events:none;
+
     background:
     radial-gradient(
         circle,
