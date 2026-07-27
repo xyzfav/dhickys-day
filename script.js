@@ -830,17 +830,17 @@ onclick="openInvitation()">
 const vouchers=[
 
 {
-file:"voucher1.PNG",
+file:"voucher1.png",
 title:"One Day Fun Date 💙"
 },
 
 {
-file:"voucher2.PNG",
+file:"voucher2.png",
 title:"Unlimited Hug Pass 🤍"
 },
 
 {
-file:"voucher3.PNG",
+file:"voucher3.png",
 title:"Food Treat 🍽"
 }
 
