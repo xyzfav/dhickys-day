@@ -665,7 +665,7 @@ Tap to Open
 
 document
 .getElementById("giftBox")
-.onclick = openGiftMenu;
+.onclick = playGiftOpen;
 
 },1800);
 
@@ -1212,6 +1212,24 @@ function openFinalScene(){
 </div>
 
 `;
+
+}
+
+function playGiftOpen(){
+
+    const gift =
+    document.getElementById("giftBox");
+
+    gift.style.animation =
+    "giftOpen .7s ease forwards";
+
+    launchConfetti();
+
+    setTimeout(()=>{
+
+        openGiftMenu();
+
+    },700);
 
 }
 /*==================================================
