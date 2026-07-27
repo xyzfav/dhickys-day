@@ -1986,3 +1986,27 @@ to{
 }
 
 }
+
+@keyframes giftOpen{
+
+0%{
+
+    transform:scale(1);
+
+}
+
+35%{
+
+    transform:scale(1.12);
+
+}
+
+100%{
+
+    transform:scale(.2);
+
+    opacity:0;
+
+}
+
+}
