@@ -1215,23 +1215,6 @@ function openFinalScene(){
 
 }
 
-function playGiftOpen(){
-
-    const gift =
-    document.getElementById("giftBox");
-
-    gift.style.animation =
-    "giftOpen .7s ease forwards";
-
-    launchConfetti();
-
-    setTimeout(()=>{
-
-        openGiftMenu();
-
-    },700);
-
-}
 /*==================================================
     OPTIONAL
 ==================================================*/
