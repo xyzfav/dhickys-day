@@ -665,8 +665,8 @@ Tap to Open
 
 document
 .getElementById("giftBox")
-.onclick = playGiftOpen;
-
+.onclick = openGiftMenu;
+        
 },1800);
 
 }
