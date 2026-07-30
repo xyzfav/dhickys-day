@@ -1106,9 +1106,9 @@ I have planned a little surprise just for us, and I hope you'll join me for anot
 
 <p>
 
-Saturday<br>
+Sunday<br>
 
-1 August 2026
+2 August 2026
 
 </p>
 
@@ -1200,7 +1200,7 @@ function openFinalScene(){
         </h1>
 
         <h2 class="final-date">
-            AUGUST 1st.
+            AUGUST 2nd.
         </h2>
 
         <div class="final-heart">
